@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 144" fill="none">
+  <title>4ergert - rotational minimal logo</title>
+  <desc>Two minimal 4ergert wordmarks paired with 180-degree rotational symmetry.</desc>
+  <defs>
+    <g id="word" stroke="#3dcfb6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M30 22V54M24 22L10 42H36"/>
+      <path d="M50 44H74V34H50V54H74"/>
+      <path d="M90 54V34H114"/>
+      <path d="M154 34H130V54H154M154 34V64H134"/>
+      <path d="M170 44H194V34H170V54H194"/>
+      <path d="M210 54V34H234"/>
+      <path d="M262 22V54H274M250 34H274"/>
+    </g>
+  </defs>
+  <g stroke="#3dcfb6" stroke-width="4" stroke-linecap="round">
+    <path d="M18 44V12H50M270 132H302V100"/>
+    <path d="M270 12H302V44M18 100V132H50"/>
+    <path d="M74 72H246"/>
+    <path d="M10 72H30M290 72H310"/>
+  </g>
+  <use href="#word" transform="translate(18 0)"/>
+  <use href="#word" transform="rotate(180 160 72) translate(18 0)"/>
+</svg>

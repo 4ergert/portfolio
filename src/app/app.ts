@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { Header } from './shared/components/header/header';
+import { Hero } from './shared/components/hero/hero';
 import { AboutMe } from './shared/components/about-me/about-me';
 import { Technologies } from './shared/components/technologies/technologies';
 import { Projects } from './shared/components/projects/projects';
@@ -9,7 +9,7 @@ import { Footer } from './shared/components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, AboutMe, Technologies, Projects, References, ContactMe, Footer],
+  imports: [Hero, AboutMe, Technologies, Projects, References, ContactMe, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

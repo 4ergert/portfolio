@@ -1,0 +1,61 @@
+:host {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.language-switcher {
+  position: relative;
+  display: flex;
+  width: 70px;
+  height: 24px;
+  box-sizing: border-box;
+  border: 1px solid #3dcfb6;
+  border-radius: 999px;
+
+  &__indicator {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 50%;
+    border-radius: inherit;
+    background: #3dcfb6;
+    pointer-events: none;
+    transition: transform 200ms ease;
+
+    &--de {
+      transform: translateX(100%);
+    }
+  }
+
+  button {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-radius: inherit;
+    background: transparent;
+    color: #3dcfb6;
+    font-family: 'Karla', sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 200ms ease;
+
+    &[aria-pressed='true'] {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .language-switcher__indicator,
+  .language-switcher button {
+    transition: none;
+  }
+}

@@ -2,6 +2,18 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.20.
 
+## Fonts
+
+Karla is loaded locally through [src/styles/_fonts.scss](src/styles/_fonts.scss)
+and used as the default font. The variable fonts support weights from 200 to 800
+in normal and italic styles. No external font service is required.
+Font files and their OFL license are in [src/styles/fonts/Karla](src/styles/fonts/Karla).
+
+Fira Code is also loaded locally and available globally with
+`font-family: 'Fira Code', monospace;`. It supports weights from 300 to 700
+in normal style. Karla remains the default font.
+Font files and their OFL license are in [src/styles/fonts/Fira_Code](src/styles/fonts/Fira_Code).
+
 ## Development server
 
 To start a local development server, run:
