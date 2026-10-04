@@ -8,7 +8,7 @@
   &--active {
     color: #3dcfb6;
     opacity: 0;
-    transform: translateY(120px);
+    transform: translateY(100px);
     filter: blur(3px);
     transition: color 400ms ease, opacity 1200ms ease 420ms,
       transform 2000ms ease-out 420ms, filter 800ms ease 420ms;
