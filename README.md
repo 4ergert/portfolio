@@ -14,6 +14,31 @@ Fira Code is also loaded locally and available globally with
 in normal style. Karla remains the default font.
 Font files and their OFL license are in [src/styles/fonts/Fira_Code](src/styles/fonts/Fira_Code).
 
+## Matrix rain
+
+Import `UnderStringMatrixRainDirective` from
+`src/app/shared/directives/string-to-matrixrain/under-string-matrix-rain.directive.ts` into a component's
+`imports`, then apply it to a text container:
+
+```html
+<a appMatrixRain href="#projects">Projects</a>
+```
+
+On hover or keyboard focus, the text turns turquoise over 200ms, then fades
+downward into decorative rain after a 220ms delay. The text returns on exit,
+without changing layout or intercepting clicks. Existing text nodes and bindings
+are preserved. Only the decorative rain is hidden from assistive technology; it
+pauses while inactive, and is disabled for reduced-motion preferences.
+The directive, its tests, and `_matrix-rain.scss` are colocated in
+`src/app/shared/directives/string-to-matrixrain`. The animation styles are still
+loaded globally through `src/styles.scss`.
+Each column has a distinct randomized vertical start offset within a 96px range
+above its fully hidden starting position, in addition to its own speed and delay.
+Rain uses Japanese Katakana characters with system Japanese font fallbacks;
+no external font service is requested.
+Use a container that can hold child elements, rather than an input or image;
+ancestor containers must allow overflow for the rain to remain visible.
+
 ## Development server
 
 To start a local development server, run:

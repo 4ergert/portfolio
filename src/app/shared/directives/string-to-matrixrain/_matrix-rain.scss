@@ -1,0 +1,86 @@
+.matrix-rain-label {
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition: color 200ms ease, opacity 400ms ease, transform 800ms ease, filter 200ms ease;
+
+  &--active {
+    color: #3dcfb6;
+    opacity: 0;
+    transform: translateY(120px);
+    filter: blur(3px);
+    transition: color 400ms ease, opacity 1200ms ease 420ms,
+      transform 2000ms ease-out 420ms, filter 800ms ease 420ms;
+  }
+}
+
+.matrix-rain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 100%;
+  min-width: 40px;
+  height: calc(100% + 64px);
+  overflow: hidden;
+  transform: translate(-50%);
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  transition: opacity 150ms ease;
+
+  &--active {
+    opacity: 1;
+    transition: opacity 1500ms ease 220ms;
+
+    .matrix-rain__column {
+      animation-play-state: running;
+    }
+  }
+
+  &__column {
+    flex: 1;
+    height: fit-content;
+    color: #3dcfb6;
+    font-family: 'Fira Code', 'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic ProN', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0;
+    white-space: pre;
+    text-align: center;
+    text-shadow: 0 0 4px #3dcfb6;
+    animation: under-string-matrix-fall linear infinite;
+    animation-play-state: paused;
+  }
+}
+
+@keyframes under-string-matrix-fall {
+  from {
+    transform: translateY(calc(-100% - var(--matrix-rain-start-offset, 0px)));
+  }
+  to {
+    transform: translateY(120px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .matrix-rain-label,
+  .matrix-rain-label--active {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .matrix-rain {
+    display: none;
+    transition: none;
+
+    .matrix-rain__column {
+      animation: none;
+    }
+  }
+}
