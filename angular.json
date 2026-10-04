@@ -5,6 +5,11 @@
     "packageManager": "npm"
   },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "skipTests": true
+    }
+  },
   "projects": {
     "portfolio": {
       "projectType": "application",
