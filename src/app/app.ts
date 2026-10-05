@@ -6,10 +6,11 @@ import { Projects } from './shared/components/projects/projects';
 import { References } from './shared/components/references/references';
 import { ContactMe } from './shared/components/contact-me/contact-me';
 import { Footer } from './shared/components/footer/footer';
+import { Lateral } from './shared/components/lateral/lateral';
 
 @Component({
   selector: 'app-root',
-  imports: [Hero, AboutMe, Technologies, Projects, References, ContactMe, Footer],
+  imports: [Hero, AboutMe, Technologies, Projects, References, ContactMe, Footer, Lateral],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
