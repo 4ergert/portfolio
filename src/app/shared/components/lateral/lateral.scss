@@ -7,7 +7,7 @@
 
   &_left {
     position: absolute;
-    top: 60%;
+    top: 75vh;
     left: 0;
     bottom: 0;
 
@@ -74,7 +74,7 @@
 
   &_right {
     position: absolute;
-    top: 40%;
+    top: 45vh;
     bottom: 0;
     right: 0;
     display: flex;
@@ -141,6 +141,30 @@
       opacity: 1;
     }
 
+    &__github-link::after,
+    &__linkedin-link::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -12px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #3dcfb6;
+      opacity: 0;
+      transform: translateY(-50%) scale(0.5);
+      transition: opacity 300ms ease, transform 300ms ease;
+      pointer-events: none;
+    }
+
+    &__github-link:hover::after,
+    &__github-link:focus-visible::after,
+    &__linkedin-link:hover::after,
+    &__linkedin-link:focus-visible::after {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+
     &__line {
       width: 1px;
       height: 100%;
@@ -165,5 +189,10 @@
 @media (prefers-reduced-motion: reduce) {
   .arrow {
     animation: none;
+  }
+
+  .lateral_right__github-link::after,
+  .lateral_right__linkedin-link::after {
+    transition: none;
   }
 }
