@@ -3,12 +3,12 @@
   top: 0;
   width: min(1440px, 100%);
   height: 100%;
-  z-index: 1000;
-  pointer-events: none;
+  z-index: 0;
 
   &_left {
     position: absolute;
     top: 60%;
+    left: 0;
     bottom: 0;
 
     &__scroll_icon {
@@ -72,9 +72,86 @@
     animation: scroll-arrow-bob 1.2s ease-in-out infinite;
   }
 
+  &_right {
+    position: absolute;
+    top: 40%;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    &__mail {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      color: #ffffff;
+      text-decoration: none;
+      writing-mode: vertical-rl;
+      rotate: 180deg;
+
+      &:hover {
+        color: #3dcfb6;
+      }
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__github-link {
+      position: relative;
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+
+    &__github-hover-icon {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
+    }
+
+    &__github-link:hover &__github-hover-icon,
+    &__github-link:focus-visible &__github-hover-icon {
+      opacity: 1;
+    }
+
+    &__linkedin-link {
+      position: relative;
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+
+    &__linkedin-hover-icon {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
+    }
+
+    &__linkedin-link:hover &__linkedin-hover-icon,
+    &__linkedin-link:focus-visible &__linkedin-hover-icon {
+      opacity: 1;
+    }
+
+    &__line {
+      width: 1px;
+      height: 100%;
+      background-color: #ffffff;
+    }
+  }
+
 }
 
 @keyframes scroll-arrow-bob {
+
   0%,
   100% {
     transform: translateY(-3px);
