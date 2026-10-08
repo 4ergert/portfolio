@@ -4,6 +4,7 @@
   width: min(1440px, 100%);
   height: 100%;
   z-index: 0;
+  pointer-events: none;
 
   &_left {
     position: absolute;
@@ -81,6 +82,10 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
+
+    a {
+      pointer-events: auto;
+    }
 
     &__mail {
       position: relative;

@@ -7,7 +7,6 @@
   }
 
   figcaption {
-    margin-top: 100px;
     border: 1px solid #3dcfb6;
     border-radius: 30px;
     background-color: #3DCFB61A;
@@ -20,10 +19,22 @@
     gap: 8px;
     margin-top: 16px;
 
-    & > div {
+    &>div {
       display: flex;
       align-items: center;
       gap: 8px;
     }
+  }
+}
+
+.who_i_am {
+  margin-top: 80px;
+
+  &__title {
+    font-family: Karla;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    color: #3DCFB6;
   }
 }
