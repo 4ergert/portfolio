@@ -1,1 +1,39 @@
-<p>references works!</p>
+<section class="references" aria-labelledby="references-heading">
+  <header class="references__header">
+    <p id="references-heading">What my colleagues say about me</p>
+    <img src="img/66.png" alt="" width="90" height="64">
+  </header>
+
+  <div class="references__viewport">
+    <div class="references__track">
+      @for (reference of references; track reference.author + reference.role) {
+        <article
+          class="references__card"
+          [class.references__card--active]="$index === activeIndex()"
+          [style.transform]="cardTransform($index)"
+        >
+          <p>{{ reference.quote }}</p>
+          <footer>
+            <span></span>
+            <small>{{ reference.author }} - {{ reference.role }}</small>
+          </footer>
+        </article>
+      }
+    </div>
+  </div>
+
+  <div class="references__controls">
+    <button type="button" aria-label="Show previous reference" (click)="previous()">&larr;</button>
+    @for (reference of references; track reference.author + reference.role) {
+      <button
+        type="button"
+        class="references__dot"
+        [class.references__dot--active]="$index === activeIndex()"
+        [attr.aria-label]="'Show reference ' + ($index + 1)"
+        [attr.aria-current]="$index === activeIndex() ? 'true' : null"
+        (click)="select($index)"
+      ></button>
+    }
+    <button type="button" aria-label="Show next reference" (click)="next()">&rarr;</button>
+  </div>
+</section>
