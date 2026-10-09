@@ -58,7 +58,11 @@ export class References {
     return `translateX(calc(-50% + ${offset * this.cardSpacing}px)) scale(${scale})`;
   }
 
-  private cardOffset(index: number): number {
+  isVisibleCard(index: number): boolean {
+    return Math.abs(this.cardOffset(index)) <= 1;
+  }
+
+  cardOffset(index: number): number {
     const difference = index - this.activeIndex();
     const midpoint = Math.floor(this.references.length / 2);
 

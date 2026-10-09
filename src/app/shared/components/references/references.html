@@ -10,6 +10,10 @@
         <article
           class="references__card"
           [class.references__card--active]="$index === activeIndex()"
+          [class.references__card--left]="cardOffset($index) === -1"
+          [class.references__card--right]="cardOffset($index) === 1"
+          [class.references__card--hidden]="!isVisibleCard($index)"
+          [attr.aria-hidden]="!isVisibleCard($index) ? 'true' : null"
           [style.transform]="cardTransform($index)"
         >
           <p>{{ reference.quote }}</p>

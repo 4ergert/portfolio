@@ -63,6 +63,23 @@
       opacity: 1;
     }
 
+    &--right {
+      background: linear-gradient(to right, #35675f 0%, #20756524 100%);
+      -webkit-mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+      mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+    }
+
+    &--left {
+      background: linear-gradient(to left, #35675f 0%, #20756524 100%);
+      -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 100%);
+      mask-image: linear-gradient(to left, #000 0%, transparent 100%);
+    }
+
+    &--hidden {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
     p {
       margin: 0;
       font-size: 16px;
