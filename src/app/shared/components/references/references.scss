@@ -1,12 +1,16 @@
 .references {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__header {
     display: flex;
     align-items: end;
-    gap: 16px;
     width: min(100%, 880px);
     margin: 0 auto;
+    justify-content: center;
+    text-align: center;
 
     p {
       margin: 0;
@@ -16,20 +20,12 @@
       color: #3dcfb6;
     }
 
-    img {
-      width: 90px;
-      height: 64px;
-      object-fit: contain;
-    }
   }
 
   &__viewport {
-    position: relative;
-    left: 50%;
-    width: 100vw;
+    width: 100%;
     margin-top: 50px;
     overflow: hidden;
-    transform: translateX(-50%);
   }
 
   &__track {
@@ -102,6 +98,15 @@
         white-space: nowrap;
       }
     }
+  }
+
+  &__quote-mark {
+    position: absolute;
+    top: -32px;
+    left: -45px;
+    width: 90px;
+    height: 64px;
+    object-fit: contain;
   }
 
   &__controls {

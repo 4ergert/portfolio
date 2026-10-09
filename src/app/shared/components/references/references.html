@@ -1,7 +1,6 @@
 <section class="references" aria-labelledby="references-heading">
   <header class="references__header">
     <p id="references-heading">What my colleagues say about me</p>
-    <img src="img/66.png" alt="" width="90" height="64">
   </header>
 
   <div class="references__viewport">
@@ -16,6 +15,9 @@
           [attr.aria-hidden]="!isVisibleCard($index) ? 'true' : null"
           [style.transform]="cardTransform($index)"
         >
+          @if ($index === activeIndex()) {
+            <img class="references__quote-mark" src="img/66.png" alt="" width="90" height="64">
+          }
           <p>{{ reference.quote }}</p>
           <footer>
             <span></span>
