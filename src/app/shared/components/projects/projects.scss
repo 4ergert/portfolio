@@ -11,7 +11,121 @@
 }
 
 h3 {
+  position: relative;
   padding: 40px 32px;
+  transition: background-color 200ms ease;
+  cursor: pointer;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    margin-left: 8px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    background: url('/icon/arrow-for-projects.png') center / contain no-repeat;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  &:hover {
+    background-color: #3DCFB64D;
+
+    &::after {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.louans_reise {
+  &__preview {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 32px);
+    z-index: 1;
+    width: 320px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px #00000040;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-8px);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  &:hover &__preview {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+.poll_app {
+    &__preview {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 32px);
+    z-index: 1;
+    width: 320px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px #00000040;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-8px);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  &:hover &__preview {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+.kanban_board {
+  &__preview {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 32px);
+    z-index: 1;
+    width: 320px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px #00000040;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-8px);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  &:hover &__preview {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+.memory_game {
+  &__preview {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 32px);
+    z-index: 1;
+    width: 320px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px #00000040;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-8px);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  &:hover &__preview {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
 }
 
 .description {
