@@ -1,0 +1,65 @@
+.contact-me {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+
+  &__title {
+    font-family: Karla;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    color: #3DCFB6;
+  }
+
+  &__left-container {
+    &__subtitle {
+      font-family: Fira Code;
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 24px;
+      color: #3DCFB6;
+    }
+
+    span {
+      font-weight: 700;
+      color: #3DCFB6;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    &__divider {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 32px;
+    }
+
+    &__label {
+      font-family: Fira Code;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 24px;
+      color: #3DCFB6;
+    }
+
+    &__input {
+      border: none;
+      background-color: transparent;
+      font-family: Fira Code;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 24px;
+
+      &::placeholder {
+        color: #ffffff;
+        font-family: Karla;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+      }
+    }
+  }
+}

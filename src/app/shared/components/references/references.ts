@@ -36,6 +36,16 @@ export class References {
       author: 'Sample colleague',
       role: 'Project collaborator',
     },
+        {
+      quote: 'Placeholder reference: Julian combines an analytical mindset with creativity and persistence when solving complex tasks.',
+      author: 'Sample colleague',
+      role: 'Project collaborator',
+    },
+        {
+      quote: 'Placeholder reference: Julian combines an analytical mindset with creativity and persistence when solving complex tasks.',
+      author: 'Sample colleague',
+      role: 'Project collaborator',
+    },
   ];
 
   readonly activeIndex = signal(0);

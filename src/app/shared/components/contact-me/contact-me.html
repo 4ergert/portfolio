@@ -1,1 +1,43 @@
-<p>contact-me works!</p>
+<section class="contact-me">
+  <div class="contact-me__left-container">
+    <p class="contact-me__title">Contact me</p>
+    <h2>Let's work together</h2>
+    <p class="contact-me__left-container__subtitle">Got a problem to solve?</p>
+    <p>Encourage people to contact you and describe what role you are interested in. Show that you will add value to
+      <br>
+      their projects through your work.
+      <br>
+      <br>
+      Need a Frontend developer? <span>Let’s talk!</span>
+    </p>
+  </div>
+  <form class="contact-me__form">
+    <hr>
+    <div class="contact-me__form__divider">
+      <label class="contact-me__form__label" for="name">What's your name?</label>
+      <input class="contact-me__form__input" type="text" id="name" name="name" placeholder="Your name goes here"
+        required>
+    </div>
+    <hr>
+    <div class="contact-me__form__divider">
+      <label class="contact-me__form__label" for="email">What's your email?</label>
+      <input class="contact-me__form__input" type="email" id="email" name="email" placeholder="youremail@email.com"
+        required>
+    </div>
+    <hr>
+    <div class="contact-me__form__divider">
+      <label class="contact-me__form__label" for="message">How can I help you?</label>
+      <input type="text" class="contact-me__form__input" id="message" name="message"
+        placeholder="Hello Julian, I am interested in..." 
+        required>
+    </div>
+    <hr>
+    <div class="checkbox">
+      <input type="checkbox" id="consent" name="consent" required>
+      <label for="consent">I've read the <span>privacy policy</span>and agree to the processing of my data as
+        outlined.</label>
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+</section>
