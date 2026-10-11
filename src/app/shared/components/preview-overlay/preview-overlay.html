@@ -1,0 +1,15 @@
+<div class="preview-overlay" (click)="close()">
+  <section
+    #dialog
+    class="preview-overlay__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="preview-overlay-title"
+    tabindex="-1"
+    (click)="$event.stopPropagation()"
+  >
+    <button class="preview-overlay__close" type="button" aria-label="Close project preview" (click)="close()">×</button>
+    <h2 id="preview-overlay-title">{{ project().title }}</h2>
+    <img [src]="project().image" [alt]="project().alt">
+  </section>
+</div>
