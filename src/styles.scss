@@ -1,6 +1,16 @@
 @use './styles/fonts';
 @use './app/shared/directives/string-to-matrixrain/matrix-rain';
 
+html {
+  scroll-behavior: smooth;
+}
+
+#aboutMe,
+#technologies,
+#projects {
+  scroll-margin-top: 50px;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
