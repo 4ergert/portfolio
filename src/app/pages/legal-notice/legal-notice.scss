@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 160px 24px 80px;
+  box-sizing: border-box;
+}
+
+.legal-notice {
+  width: min(100%, 880px);
+  margin: 0 auto;
+
+  &__eyebrow {
+    margin: 0 0 16px;
+    color: #3dcfb6;
+    font-family: Fira Code;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  h1 {
+    margin: 0;
+    color: #3dcfb6;
+    font-family: Fira Code;
+    font-size: 64px;
+  }
+
+  &__placeholder {
+    margin-top: 40px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}

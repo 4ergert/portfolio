@@ -1,16 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { Hero } from './shared/components/hero/hero';
-import { AboutMe } from './shared/components/about-me/about-me';
-import { Technologies } from './shared/components/technologies/technologies';
-import { Projects } from './shared/components/projects/projects';
-import { References } from './shared/components/references/references';
-import { ContactMe } from './shared/components/contact-me/contact-me';
-import { Footer } from './shared/components/footer/footer';
-import { Lateral } from './shared/components/lateral/lateral';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Hero, AboutMe, Technologies, Projects, References, ContactMe, Footer, Lateral],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

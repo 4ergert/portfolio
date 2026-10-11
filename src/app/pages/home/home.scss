@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+about-me {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+technologies {
+  display: block;
+  margin-top: 150px;
+  padding: 0 24px;
+}
+
+projects {
+  display: block;
+  margin-top: 150px;
+  padding: 0 24px;
+}
+
+references {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 140px;
+}
+
+contact-me {
+  display: block;
+  margin-top: 150px;
+  padding: 0 24px;
+}
+
+app-footer {
+  display: block;
+  margin-top: 142px;
+  padding: 0 24px 24px;
+}
