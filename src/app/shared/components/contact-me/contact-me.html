@@ -11,30 +11,81 @@
       Need a Frontend developer? <span>Let’s talk!</span>
     </p>
   </div>
-  <form class="contact-me__form">
+
+  <form class="contact-me__form" novalidate (submit)="onSubmit($event, nameInput.value, emailInput.value, messageInput.value, consentInput.checked)">
     <hr>
     <div class="contact-me__form__divider">
       <label class="contact-me__form__label" for="name">What's your name?</label>
-      <input class="contact-me__form__input" type="text" id="name" name="name" placeholder="Your name goes here"
-        required>
+      <input
+        #nameInput
+        class="contact-me__form__input"
+        [class.contact-me__form__input--invalid]="nameMissing()"
+        [attr.aria-invalid]="nameMissing()"
+        type="text"
+        id="name"
+        name="name"
+        [placeholder]="nameMissing() ? 'Oops! it seems your name is missing' : 'Your name goes here'"
+        (click)="clearNameError()"
+        (focus)="clearNameError()"
+        (input)="clearNameError()"
+        required
+      >
     </div>
     <hr>
     <div class="contact-me__form__divider">
       <label class="contact-me__form__label" for="email">What's your email?</label>
-      <input class="contact-me__form__input" type="email" id="email" name="email" placeholder="youremail@email.com"
-        required>
+      <input
+        #emailInput
+        class="contact-me__form__input"
+        [class.contact-me__form__input--invalid]="emailMissing()"
+        [attr.aria-invalid]="emailMissing()"
+        type="email"
+        id="email"
+        name="email"
+        [placeholder]="emailMissing() ? 'Hoppla! your email is required' : 'youremail@email.com'"
+        (pointerdown)="clearEmailError()"
+        (click)="clearEmailError()"
+        (focus)="clearEmailError()"
+        (input)="clearEmailError()"
+        required
+      >
     </div>
     <hr>
     <div class="contact-me__form__divider">
       <label class="contact-me__form__label" for="message">How can I help you?</label>
-      <input type="text" class="contact-me__form__input" id="message" name="message"
-        placeholder="Hello Julian, I am interested in..." required>
+      <input
+        #messageInput
+        class="contact-me__form__input"
+        [class.contact-me__form__input--invalid]="messageMissing()"
+        [attr.aria-invalid]="messageMissing()"
+        type="text"
+        id="message"
+        name="message"
+        [placeholder]="messageMissing() ? 'What do you need to develop?' : 'Hi Julian, I am interested in...'"
+        (click)="clearMessageError()"
+        (focus)="clearMessageError()"
+        (input)="clearMessageError()"
+        required
+      >
     </div>
     <hr>
-    <div class="checkbox">
-      <input type="checkbox" id="consent" name="consent" required>
-      <label for="consent">I've read the <span>privacy policy </span>and agree to the processing of my data as
-        outlined.</label>
+    <div class="checkbox-section">
+      <div class="checkbox">
+        <input
+          #consentInput
+          [attr.aria-invalid]="consentMissing()"
+          type="checkbox"
+          id="consent"
+          name="consent"
+          (change)="clearConsentError()"
+          required
+        >
+        <label for="consent">I've read the <span class="legal_notice_link" routerLink="/legal-notice">privacy policy</span> and agree to the processing of my data as
+          outlined.</label>
+      </div>
+      @if (consentMissing()) {
+        <p class="checkbox-section__error">Please accept the privacy policy</p>
+      }
     </div>
 
     <div class="contact-me__form__submit">
