@@ -21,7 +21,8 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background-color: rgb(0 0 0 / 72%);
+  background-color: transparent;
+  transition: background-color 250ms ease 650ms;
 
   &__dialog {
     position: relative;
@@ -29,12 +30,14 @@
     max-height: calc(100vh - 48px);
     overflow: auto;
     padding: 91px 80px 64px 80px;
-    border: 1px solid #3dcfb6;
+    border: 1px solid transparent;
     border-radius: 16px;
-    background-color: #1c1c1c;
-    box-shadow: 0 24px 64px rgb(0 0 0 / 50%);
+    background-color: transparent;
+    box-shadow: none;
     display: flex;
     flex-direction: column;
+    transition: border-color 250ms ease 650ms, background-color 250ms ease 650ms,
+      box-shadow 250ms ease 650ms;
 
     &__left {
       display: flex;
@@ -103,6 +106,7 @@
           gap: 4px;
         }
       }
+
     }
   }
 
@@ -150,6 +154,16 @@
       background-color: #3dcfb6;
       transform: rotate(-45deg) scaleX(1.6);
     }
+  }
+}
+
+.preview_overlay--ready {
+  background-color: rgb(0 0 0 / 72%);
+
+  .preview_overlay__dialog {
+    border-color: #3dcfb6;
+    background-color: #1c1c1c;
+    box-shadow: 0 24px 64px rgb(0 0 0 / 50%);
   }
 }
 
@@ -249,6 +263,44 @@ img {
   width: 570px;
   height: auto;
   border-radius: 8px;
+}
+
+.preview_overlay__project-image {
+  --origin-x: 0px;
+  --origin-y: 0px;
+  --origin-scale-x: 1;
+  --origin-scale-y: 1;
+  transform: translate(var(--origin-x), var(--origin-y))
+    scale(var(--origin-scale-x), var(--origin-scale-y));
+  transform-origin: top left;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.preview_overlay--ready .preview_overlay__project-image {
+  transform: translate(0) scale(1);
+}
+
+.preview_overlay:not(.preview_overlay--ready) {
+  .close_button_area,
+  .preview_overlay__left,
+  .forward_button__area {
+    opacity: 0;
+  }
+
+  .close_button_area,
+  .preview_overlay__left,
+  .forward_button__area {
+    transition: opacity 250ms ease 650ms;
+  }
+}
+
+.preview_overlay--ready {
+  .close_button_area,
+  .preview_overlay__left,
+  .forward_button__area {
+    opacity: 1;
+    transition: opacity 250ms ease 650ms;
+  }
 }
 
 @media (max-width: 600px) {

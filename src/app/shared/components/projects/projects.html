@@ -8,15 +8,15 @@
     <h3
       role="button"
       tabindex="0"
-      (click)="openPreview(project)"
-      (keydown.enter)="openPreview(project)"
-      (keydown.space)="$event.preventDefault(); openPreview(project)"
+      (click)="openPreview(project, projectPreview)"
+      (keydown.enter)="openPreview(project, projectPreview)"
+      (keydown.space)="$event.preventDefault(); openPreview(project, projectPreview)"
     >
       {{ project.title }}
-      <img class="project-preview" [src]="project.image" [alt]="project.alt">
+      <img #projectPreview class="project-preview" [src]="project.image" [alt]="project.alt">
     </h3>
   }
   @if (selectedProject(); as project) {
-    <app-preview-overlay [project]="project" (closed)="closePreview()" />
+    <app-preview-overlay [project]="project" [origin]="previewOrigin()!" (closed)="closePreview()" />
   }
 </section>

@@ -1,4 +1,8 @@
-<div class="preview_overlay" (click)="close()">
+<div
+  class="preview_overlay"
+  [class.preview_overlay--ready]="isReady()"
+  (click)="close()"
+>
   <section #dialog class="preview_overlay__dialog" role="dialog" aria-modal="true"
     aria-labelledby="preview-overlay-title" tabindex="-1" (click)="$event.stopPropagation()">
 
@@ -36,7 +40,7 @@
       </section>
 
       <section class="preview_overlay__dialog__right">
-        <img [src]="project().image" [alt]="project().alt">
+        <img #projectImage class="preview_overlay__project-image" [src]="project().image" [alt]="project().alt">
       </section>
     </div>
 
