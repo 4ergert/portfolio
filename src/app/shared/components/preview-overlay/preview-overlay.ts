@@ -1,10 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, input, output, viewChild } from '@angular/core';
-
-export interface ProjectPreview {
-  title: string;
-  image: string;
-  alt: string;
-}
+import type { ProjectPreview } from '../projects/projects.data';
 
 @Component({
   selector: 'app-preview-overlay',

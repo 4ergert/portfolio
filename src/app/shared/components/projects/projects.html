@@ -3,54 +3,19 @@
   <h2>Featured Projects</h2>
   <p class="description">Explore a selection of my work here - Interact with <br>
      projects to see my skills in action.</p>
-  <hr>
-  <h3
-    class="louans_reise"
-    role="button"
-    tabindex="0"
-    (click)="openPreview({ title: 'Louan’s Reise', image: 'img/louans_reise.png', alt: 'Preview of Louan’s Reise' })"
-    (keydown.enter)="openPreview({ title: 'Louan’s Reise', image: 'img/louans_reise.png', alt: 'Preview of Louan’s Reise' })"
-    (keydown.space)="$event.preventDefault(); openPreview({ title: 'Louan’s Reise', image: 'img/louans_reise.png', alt: 'Preview of Louan’s Reise' })"
-  >
-    Louan's Reise
-    <img class="louans_reise__preview" src="img/louans_reise.png" alt="Preview of Louan's Reise">
-  </h3>
-  <hr>
-  <h3
-    class="poll_app"
-    role="button"
-    tabindex="0"
-    (click)="openPreview({ title: 'Poll App', image: 'img/poll_app.png', alt: 'Preview of Poll App' })"
-    (keydown.enter)="openPreview({ title: 'Poll App', image: 'img/poll_app.png', alt: 'Preview of Poll App' })"
-    (keydown.space)="$event.preventDefault(); openPreview({ title: 'Poll App', image: 'img/poll_app.png', alt: 'Preview of Poll App' })"
-  >
-    Poll App
-    <img class="poll_app__preview" src="img/poll_app.png" alt="Preview of Poll App">
-  </h3>
-  <hr>
-  <h3
-    class="kanban_board"
-    role="button"
-    tabindex="0"
-    (click)="openPreview({ title: 'Kanban Board', image: 'img/kanban.png', alt: 'Preview of Kanban Board' })"
-    (keydown.enter)="openPreview({ title: 'Kanban Board', image: 'img/kanban.png', alt: 'Preview of Kanban Board' })"
-    (keydown.space)="$event.preventDefault(); openPreview({ title: 'Kanban Board', image: 'img/kanban.png', alt: 'Preview of Kanban Board' })"
-  >
-    Kanban Board
-    <img class="kanban_board__preview" src="img/kanban.png" alt="Preview of Kanban Board">
-  </h3>
-  <hr>
-  <h3
-    class="memory_game"
-    role="button"
-    tabindex="0"
-    (click)="openPreview({ title: 'Memory Game', image: 'img/memory.png', alt: 'Preview of Memory Game' })"
-    (keydown.enter)="openPreview({ title: 'Memory Game', image: 'img/memory.png', alt: 'Preview of Memory Game' })"
-    (keydown.space)="$event.preventDefault(); openPreview({ title: 'Memory Game', image: 'img/memory.png', alt: 'Preview of Memory Game' })"
-  >
-    Memory Game
-    <img class="memory_game__preview" src="img/memory.png" alt="Preview of Memory Game">
-  </h3>
+  @for (project of projects; track project.id) {
+    <hr>
+    <h3
+      role="button"
+      tabindex="0"
+      (click)="openPreview(project)"
+      (keydown.enter)="openPreview(project)"
+      (keydown.space)="$event.preventDefault(); openPreview(project)"
+    >
+      {{ project.title }}
+      <img class="project-preview" [src]="project.image" [alt]="project.alt">
+    </h3>
+  }
   @if (selectedProject(); as project) {
     <app-preview-overlay [project]="project" (closed)="closePreview()" />
   }
