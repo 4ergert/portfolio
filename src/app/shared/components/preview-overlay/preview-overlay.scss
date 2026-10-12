@@ -2,7 +2,19 @@
   display: contents;
 }
 
-.preview-overlay {
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 87px;
+}
+
+.close_button_area {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.preview_overlay {
   position: fixed;
   z-index: 1000;
   inset: 0;
@@ -10,66 +22,241 @@
   place-items: center;
   padding: 24px;
   background-color: rgb(0 0 0 / 72%);
+
+  &__dialog {
+    position: relative;
+    width: min(1248px, 100%);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    padding: 91px 80px 64px 80px;
+    border: 1px solid #3dcfb6;
+    border-radius: 16px;
+    background-color: #1c1c1c;
+    box-shadow: 0 24px 64px rgb(0 0 0 / 50%);
+    display: flex;
+    flex-direction: column;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__what_is_this_project_about {
+      margin: 0;
+      font-family: Fira Code;
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 24px;
+      color: #3dcfb6;
+    }
+
+    &__text {
+      margin: 0;
+      font-family: Fira Code;
+      font-weight: 400;
+      font-style: Normal;
+      font-size: 16px;
+      color: #ffffff;
+    }
+
+    &__using {
+      display: flex;
+      flex-direction: row;
+
+      &_tech {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        & img {
+          display: block;
+          width: 24px;
+          height: 24px;
+        }
+
+        & p {
+          font-family: Karla;
+          font-weight: 400;
+          font-style: Regular;
+          font-size: 16px;
+          color: #ffffff;
+        }
+
+        &__item {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 56px;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    place-items: center;
+    background: transparent;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background-color: #ffffff;
+      content: '';
+      transition: transform 200ms ease, background-color 200ms ease;
+    }
+
+    &::before {
+      transform: rotate(45deg) scaleX(1);
+    }
+
+    &::after {
+      transform: rotate(-45deg) scaleX(1);
+    }
+
+    &:hover::before,
+    &:focus-visible::before {
+      background-color: #3dcfb6;
+      transform: rotate(45deg) scaleX(1.6);
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      background-color: #3dcfb6;
+      transform: rotate(-45deg) scaleX(1.6);
+    }
+  }
 }
 
-.preview-overlay__dialog {
-  position: relative;
-  width: min(880px, 100%);
-  max-height: calc(100vh - 48px);
-  overflow: auto;
-  padding: 48px;
-  border: 1px solid #3dcfb6;
-  border-radius: 16px;
-  background-color: #1c1c1c;
-  box-shadow: 0 24px 64px rgb(0 0 0 / 50%);
+.preview_overlay__actions {
+  margin-top: 40px;
   display: flex;
+  gap: 32px;
 
-  h2 {
-    margin: 0 48px 24px 0;
+  button {
+    padding: 12px 24px;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    background-color: transparent;
+    color: #e3e3e3;
+    cursor: pointer;
     font-family: Fira Code;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 64px;
-    line-height: 95%;
+    font-size: 20px;
+    font-weight: 400;
+    transition: border-color 300ms ease, color 300ms ease;
+
+    span {
+      display: inline-block;
+      transition: transform 300ms ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+      border-color: transparent;
+      color: #3dcfb6;
+      font-weight: 500;
+
+      span {
+        transform: scale(1.3);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid #3dcfb6;
+      outline-offset: 4px;
+    }
+  }
+}
+
+.forward_button {
+  width: fit-content;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    font-family: Karla;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
     color: #ffffff;
+    display: inline-block;
+    transition: transform 300ms ease;
+  }
+
+  &:hover span,
+  &:focus-visible span {
+    color: #3dcfb6;
+    transform: scale(1.1);
   }
 
   img {
-    display: block;
-    width: 570px;
-    height: auto;
-    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__area {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
-.preview-overlay__close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: grid;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: none;
-  place-items: center;
-  background: transparent;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 24px;
-  line-height: 1;
+h1 {
+  color: #3dcfb6;
+  line-height: 95%;
+}
 
-  &:hover,
-  &:focus-visible {
-    transform: scale(1.2);
-  }
+h2 {
+  margin: 0 48px 24px 0;
+  font-family: Fira Code;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 64px;
+  line-height: 95%;
+  color: #ffffff;
+}
+
+img {
+  display: block;
+  width: 570px;
+  height: auto;
+  border-radius: 8px;
 }
 
 @media (max-width: 600px) {
-  .preview-overlay {
+  .preview_overlay {
     padding: 16px;
   }
 
-  .preview-overlay__dialog {
+  .preview_overlay__dialog {
     padding: 40px 20px 20px;
   }
 }

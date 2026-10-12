@@ -3,31 +3,41 @@ export interface ProjectPreview {
   title: string;
   image: string;
   alt: string;
+  description: string;
+  using: readonly string[];
 }
 
 export const PROJECTS: readonly ProjectPreview[] = [
   {
-    id: 'louans-reise',
+    id: '01',
     title: "Louan's Reise",
     image: 'img/louans_reise.png',
     alt: "Preview of Louan's Reise",
+    description: "A jump-and-run game where Louan embarks on a journey to find his siblings.",
+    using: ['HTML', 'CSS', 'JavaScript'],
   },
   {
-    id: 'poll-app',
+    id: '02',
     title: 'Poll App',
     image: 'img/poll_app.png',
     alt: 'Preview of Poll App',
+    description: "An app to create and participate in polls. Users can vote on various topics and see real-time results.",
+    using: ['HTML', 'CSS', 'TypeScript', 'Angular'],
   },
   {
-    id: 'kanban-board',
+    id: '03',
     title: 'Kanban Board',
     image: 'img/kanban.png',
     alt: 'Preview of Kanban Board',
+    description: "A digital Kanban board for task management. Organize tasks into columns and track progress visually.",
+    using: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
   },
   {
-    id: 'memory-game',
+    id: '04',
     title: 'Memory Game',
     image: 'img/memory.png',
     alt: 'Preview of Memory Game',
+    description: "A classic memory game where players match pairs of cards. Test and improve your memory skills.",
+    using: ['HTML', 'CSS', 'TypeScript']
   },
 ];
