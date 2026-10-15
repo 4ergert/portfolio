@@ -30,4 +30,20 @@ export class Projects {
     this.selectedProject.set(null);
     this.previewOrigin.set(null);
   }
+
+  showNextProject(): void {
+    const currentProject = this.selectedProject();
+
+    if (!currentProject) {
+      return;
+    }
+
+    const currentIndex = this.projects.findIndex(project => project.id === currentProject.id);
+
+    if (currentIndex === -1) {
+      throw new Error(`Unknown project: ${currentProject.id}`);
+    }
+
+    this.selectedProject.set(this.projects[(currentIndex + 1) % this.projects.length]);
+  }
 }

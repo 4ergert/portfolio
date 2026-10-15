@@ -8,17 +8,21 @@
   <h3 role="button" tabindex="0" (click)="openPreview(project, projectPreview)"
     (keydown.enter)="openPreview(project, projectPreview)"
     (keydown.space)="$event.preventDefault(); openPreview(project, projectPreview)">
-    {{ project.title }}
+    <span class="project-title">{{ project.title }}</span>
 
     <section class="project_techs">
       @for (tech of project.using; track tech) {
       <span class="project_tech">{{ tech }}</span>
       }
     </section>
-    <img #projectPreview class="project-preview" [src]="project.image" [alt]="project.alt">
+    <div class="project-preview-wrapper">
+      <div class="project-preview-rain" aria-hidden="true"></div>
+      <img #projectPreview class="project-preview" [src]="project.image" [alt]="project.alt">
+    </div>
   </h3>
   }
   @if (selectedProject(); as project) {
-  <app-preview-overlay [project]="project" [origin]="previewOrigin()!" (closed)="closePreview()" />
+  <app-preview-overlay [project]="project" [origin]="previewOrigin()!" (closed)="closePreview()"
+    (nextProject)="showNextProject()" />
   }
 </section>

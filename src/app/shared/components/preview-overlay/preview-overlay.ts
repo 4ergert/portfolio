@@ -12,9 +12,11 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
   readonly project = input.required<ProjectPreview>();
   readonly origin = input.required<PreviewOrigin>();
   readonly closed = output<void>();
+  readonly nextProject = output<void>();
   readonly dialog = viewChild.required<ElementRef<HTMLElement>>('dialog');
   readonly projectImage = viewChild.required<ElementRef<HTMLImageElement>>('projectImage');
   readonly isReady = signal(false);
+  readonly isAdvancing = signal(false);
   private animationFrameId: number | undefined;
 
   ngAfterViewInit(): void {
@@ -48,5 +50,14 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
 
   close(): void {
     this.closed.emit();
+  }
+
+  advance(): void {
+    this.isAdvancing.set(true);
+    this.nextProject.emit();
+  }
+
+  resetAdvanceFeedback(): void {
+    this.isAdvancing.set(false);
   }
 }

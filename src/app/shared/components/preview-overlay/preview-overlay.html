@@ -34,8 +34,10 @@
         </section>
 
         <section class="preview_overlay__actions">
-          <button type="button"><span>Github</span></button>
-          <button type="button"><span>Live Demo</span></button>
+          <button type="button"><a [href]="project().githubLink" target="_blank"
+              rel="noopener noreferrer">Github</a></button>
+          <button type="button"><a target="_blank"
+              rel="noopener noreferrer">Live Demo</a></button>
         </section>
       </section>
 
@@ -45,8 +47,10 @@
     </div>
 
     <div class="forward_button__area">
-      <button class="forward_button" type="button" aria-label="Next project">
-        <span>next project</span><img src="icon/overlay/arrow_forward.png" alt="Arrow forward icon">
+      <button class="forward_button" [class.forward_button--pressed]="isAdvancing()" type="button"
+        aria-label="Next project" (click)="advance()">
+        <span (animationend)="resetAdvanceFeedback()">next project</span><img src="icon/overlay/arrow_forward.png"
+          alt="Arrow forward icon">
       </button>
     </div>
     

@@ -18,55 +18,81 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.project-title {
+  display: flex;
+  align-items: center;
 
   &::after {
     content: '';
-    position: absolute;
     margin-left: 8px;
-    top: 50%;
     width: 14px;
     height: 14px;
     background: url('/icon/arrow-for-projects.png') center / contain no-repeat;
     opacity: 0;
-    transform: translateY(-50%);
+    transform: translateX(-4px);
     transition: opacity 200ms ease, transform 200ms ease;
-  }
-
-  &:hover,
-  &:focus-visible {
-    background-color: #3DCFB64D;
-
-    &::after {
-      opacity: 1;
-      transform: translateY(-50%);
-    }
-  }
-
-  &:focus-visible {
-    outline: 2px solid #3dcfb6;
-    outline-offset: 2px;
   }
 }
 
-.project-preview {
+h3:hover .project-title::after,
+h3:focus-visible .project-title::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+h3:hover,
+h3:focus-visible {
+  background-color: #3DCFB64D;
+}
+
+h3:focus-visible {
+  outline: 2px solid #3dcfb6;
+  outline-offset: 2px;
+}
+
+.project-preview-wrapper {
   position: absolute;
   top: 50%;
   left: calc(100% + 32px);
   z-index: 1;
   width: 320px;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 12px 32px #00000040;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-50%) translateX(-8px);
   transition: opacity 200ms ease, transform 200ms ease;
 }
 
-h3:hover .project-preview,
-h3:focus-visible .project-preview {
+h3:hover .project-preview-wrapper,
+h3:focus-visible .project-preview-wrapper {
   opacity: 1;
   transform: translateY(-50%);
+}
+
+.project-preview {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 12px 12px 32px #00000040;
+}
+
+.project-preview-rain {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.7;
+  transform: translate(18px, 18px);
+  border-radius: 16px;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 10px,
+    #3dcfb6 10px 11px
+  );
 }
 
 .description {
