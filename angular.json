@@ -32,6 +32,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "contact-form-mail.php",
+                "input": "src/app/shared/mail",
+                "output": "api"
               }
             ],
             "styles": [

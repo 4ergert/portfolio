@@ -12,7 +12,7 @@
     </p>
   </div>
 
-  <form class="contact-me__form" novalidate (submit)="onSubmit($event, nameInput.value, emailInput.value, messageInput.value, consentInput.checked)">
+  <form class="contact-me__form" novalidate (submit)="onSubmit($event, nameInput.value, emailInput.value, messageInput.value, consentInput.checked, emailInput.validity.valid)">
     <hr>
     <div class="contact-me__form__divider">
       <label class="contact-me__form__label" for="name">What's your name?</label>
@@ -89,7 +89,14 @@
     </div>
 
     <div class="contact-me__form__submit">
-      <button type="submit"><span>Say Hello ;)</span></button>
+      <button type="submit" [disabled]="sending()">
+        <span>{{ sending() ? 'Sending...' : 'Say Hello ;)' }}</span>
+      </button>
     </div>
+    @if (submitMessage()) {
+      <p class="contact-me__form__status" [class.contact-me__form__status--success]="submitSucceeded()" role="status" aria-live="polite">
+        {{ submitMessage() }}
+      </p>
+    }
   </form>
 </section>

@@ -2,21 +2,23 @@
   <p class="title">Portfolio</p>
   <h2>Featured Projects</h2>
   <p class="description">Explore a selection of my work here - Interact with <br>
-     projects to see my skills in action.</p>
+    projects to see my skills in action.</p>
   @for (project of projects; track project.id) {
-    <hr>
-    <h3
-      role="button"
-      tabindex="0"
-      (click)="openPreview(project, projectPreview)"
-      (keydown.enter)="openPreview(project, projectPreview)"
-      (keydown.space)="$event.preventDefault(); openPreview(project, projectPreview)"
-    >
-      {{ project.title }}
-      <img #projectPreview class="project-preview" [src]="project.image" [alt]="project.alt">
-    </h3>
+  <hr>
+  <h3 role="button" tabindex="0" (click)="openPreview(project, projectPreview)"
+    (keydown.enter)="openPreview(project, projectPreview)"
+    (keydown.space)="$event.preventDefault(); openPreview(project, projectPreview)">
+    {{ project.title }}
+
+    <section class="project_techs">
+      @for (tech of project.using; track tech) {
+      <span class="project_tech">{{ tech }}</span>
+      }
+    </section>
+    <img #projectPreview class="project-preview" [src]="project.image" [alt]="project.alt">
+  </h3>
   }
   @if (selectedProject(); as project) {
-    <app-preview-overlay [project]="project" [origin]="previewOrigin()!" (closed)="closePreview()" />
+  <app-preview-overlay [project]="project" [origin]="previewOrigin()!" (closed)="closePreview()" />
   }
 </section>

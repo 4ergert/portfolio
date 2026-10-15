@@ -154,6 +154,16 @@
       }
     }
 
+    &__status {
+      margin: 16px 0 0;
+      color: #ff6b6b;
+      text-align: center;
+
+      &--success {
+        color: #3dcfb6;
+      }
+    }
+
     &__divider {
       display: flex;
       flex-direction: column;

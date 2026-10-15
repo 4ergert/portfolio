@@ -42,7 +42,7 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
 
   private readonly onDialogKeydown = (event: KeyboardEvent): void => {
     if (event.key === 'Escape') {
-      this.close();
+      this.close()
     }
   };
 
