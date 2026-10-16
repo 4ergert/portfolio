@@ -76,7 +76,7 @@
     box-sizing: border-box;
     background: #ffffff1f;
     transform: translateX(-50%) rotate(-3deg);
-    }
+  }
 
   &__marquee-track {
     display: flex;
@@ -148,7 +148,41 @@
     font-size: 24px;
   }
 
-  .hero__buttons button span {
-    font-size: 18px;
+  .hero__buttons {
+
+    & button {
+      padding: 8px 16px;
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .hero__buttons {
+    gap: 24px;
+
+    & button {
+      padding: 6px 12px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  .hero__section p {
+    font-size: 20px;
+  }
+
+  .hero__buttons {
+    gap: 16px;
+
+    & button {
+      padding: 4px 8px;
+      font-size: 14px;
+    }
   }
 }

@@ -119,13 +119,13 @@
       display: flex;
       visibility: hidden;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: center;
       gap: 24px;
       min-width: 220px;
       padding: 24px;
       border: 1px solid #3dcfb6;
       border-radius: 16px;
-      background-color: #1c1c1c;
+      background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
       opacity: 0;
       pointer-events: none;
       transform: translateY(-8px);
