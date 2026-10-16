@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { LanguageSwitcher } from '../../../language-switcher/language-switcher';
 
 @Component({
@@ -7,4 +7,14 @@ import { LanguageSwitcher } from '../../../language-switcher/language-switcher';
   templateUrl: './nav.html',
   styleUrl: './nav.scss',
 })
-export class Nav {}
+export class Nav {
+  readonly isMenuOpen = signal(false);
+
+  toggleMenu(): void {
+    this.isMenuOpen.update(isOpen => !isOpen);
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen.set(false);
+  }
+}

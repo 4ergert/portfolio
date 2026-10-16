@@ -136,3 +136,19 @@
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 1100px) {
+  .hero__section p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 820px) {
+  .hero__section p {
+    font-size: 24px;
+  }
+
+  .hero__buttons button span {
+    font-size: 18px;
+  }
+}

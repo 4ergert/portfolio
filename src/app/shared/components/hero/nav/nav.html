@@ -1,4 +1,4 @@
-  <nav class="nav_bar">
+  <nav class="nav_bar" (keydown.escape)="closeMenu()">
     <div class="nav_bar__language-switcher">
       <language-switcher></language-switcher>
       <ul>
@@ -8,4 +8,20 @@
       </ul>
     </div>
     <img class="nav_bar__logo" src="img/logo/4ergert-01.svg" alt="4ergert Logo" width="400" height="auto">
+
+    <button class="nav_bar__menu-toggle" type="button" aria-label="Open navigation menu"
+      [attr.aria-expanded]="isMenuOpen()" aria-controls="mobile-navigation-menu" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div id="mobile-navigation-menu" class="nav_bar__menu" [class.nav_bar__menu--open]="isMenuOpen()">
+      <language-switcher></language-switcher>
+      <ul>
+        <li><a href="#aboutMe" (click)="closeMenu()">About me</a></li>
+        <li><a href="#technologies" (click)="closeMenu()">Skills</a></li>
+        <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
+      </ul>
+    </div>
   </nav>
