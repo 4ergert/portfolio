@@ -21,7 +21,7 @@
 
     &>div {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
     }
   }
@@ -36,5 +36,39 @@
     font-style: Medium;
     font-size: 24px;
     color: #3DCFB6;
+  }
+}
+
+@media (max-width: 450px) {
+  .about_me {
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    &__img-container {
+      width: 280px;
+    }
+
+    &__img {
+      height: 538px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
+    padding: 20px 24px !important;
+    
+  }
+
+  .who_i_am {
+    margin-top: 0px;
+
+    h2 {
+      font-size: 48px;
+    }
   }
 }
