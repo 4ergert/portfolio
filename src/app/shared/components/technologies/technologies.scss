@@ -103,3 +103,40 @@
     }
   }
 }
+
+@media (max-width: 450px) {
+  h2 {
+    font-size: 56px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .skill_set {
+    width: auto;
+
+    &__technologies {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 16px;
+      row-gap: 32px;
+
+      & img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+
+
+}
+
+@media (max-width: 390px) {
+  .skill_set {
+    &__technology {
+      width: 80px;
+      height: 92px;
+    }
+  }
+}

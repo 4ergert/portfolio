@@ -39,3 +39,15 @@ app-footer {
   margin-top: 142px;
   padding: 0 24px 24px;
 }
+
+@media (max-width: 450px) {
+  technologies {
+    padding: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  technologies {
+    margin-top: 100px;
+  }
+}
