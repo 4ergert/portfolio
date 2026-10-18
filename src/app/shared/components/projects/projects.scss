@@ -88,11 +88,9 @@ h3:focus-visible .project-preview-wrapper {
   opacity: 0.7;
   transform: translate(18px, 18px);
   border-radius: 16px;
-  background: repeating-linear-gradient(
-    135deg,
-    transparent 0 10px,
-    #3dcfb6 10px 11px
-  );
+  background: repeating-linear-gradient(135deg,
+      transparent 0 10px,
+      #3dcfb6 10px 11px);
 }
 
 .description {
@@ -155,5 +153,9 @@ h3:focus-visible .project-preview-wrapper {
 
   h2 {
     font-size: 48px;
+  }
+
+  .project_techs {
+    gap: 0;
   }
 }

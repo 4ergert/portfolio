@@ -1,0 +1,58 @@
+:host {
+  position: absolute;
+  top: 88vh;
+  left: 50%;
+  width: 100cqw;
+  overflow-x: clip;
+  transform: translateX(-50%);
+}
+
+.hero__marquee {
+  overflow: hidden;
+  padding: 12px 32px;
+  box-sizing: border-box;
+  background: #ffffff1f;
+  transform: rotate(-3deg);
+
+  &-track {
+    display: flex;
+    width: max-content;
+    animation: hero-marquee-scroll 20s linear infinite;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    padding-left: 56px;
+
+    font-family: Karla;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 32px;
+    color: #3DCFB6;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__marquee-track {
+    animation: none;
+  }
+
+  .hero__marquee-content[aria-hidden='true'] {
+    display: none;
+  }
+}
+
+@keyframes hero-marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
