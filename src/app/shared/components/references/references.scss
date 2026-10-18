@@ -23,12 +23,16 @@
   }
 
   &__viewport {
+    container-type: inline-size;
     width: 111%;
     margin-top: 50px;
     overflow: hidden;
   }
 
   &__track {
+    --card-width: 520px;
+    --side-card-scale: 1;
+    --card-spacing: 600px;
     position: relative;
 
     height: 270px;
@@ -38,6 +42,7 @@
   }
 
   &__card {
+    --card-scale: var(--side-card-scale);
     position: absolute;
     top: 40px;
     left: 50%;
@@ -45,7 +50,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 520px;
+    width: var(--card-width);
     height: 220px;
     padding: 32px 26px;
     border: 1px solid #3dcfb6;
@@ -55,6 +60,7 @@
     transition: transform 500ms ease, opacity 600ms ease, background-color 400ms ease;
 
     &--active {
+      --card-scale: 1.1;
       z-index: 1;
       background: #35675f;
       opacity: 1;
@@ -149,6 +155,10 @@
 
 @media (max-width: 600px) {
   .references {
+    &__track {
+      --card-width: calc(100vw - 48px);
+    }
+
     &__header {
       align-items: start;
       padding: 0 24px;
@@ -160,8 +170,37 @@
     }
 
     &__card {
-      width: calc(100vw - 48px);
       height: 210px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .references {
+    &__viewport {
+      width: 100cqw;
+    }
+
+    &__header {
+      padding: 0;
+    }
+
+    &__track {
+      --card-width: min(358px, 80cqw);
+      --side-card-scale: 0.8;
+      --card-spacing: calc(50cqw + var(--card-width) * var(--side-card-scale) / 2 - 10px);
+      height: 420px;
+    }
+
+    &__card {
+      height: 360px;
+    }
+
+    &__quote-mark {
+      width: 70px;
+      height: 50px;
+      top: -20px;
+      left: -10px;
     }
   }
 }

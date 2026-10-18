@@ -13,8 +13,6 @@ interface Reference {
   styleUrl: './references.scss',
 })
 export class References {
-  private readonly cardSpacing = 600;
-
   readonly references: Reference[] = [
     {
       quote: 'Placeholder reference: Julian approaches challenges with care, communicates clearly, and always looks for practical solutions.',
@@ -36,12 +34,12 @@ export class References {
       author: 'Sample colleague',
       role: 'Project collaborator',
     },
-        {
+    {
       quote: 'Placeholder reference: Julian combines an analytical mindset with creativity and persistence when solving complex tasks.',
       author: 'Sample colleague',
       role: 'Project collaborator',
     },
-        {
+    {
       quote: 'Placeholder reference: Julian combines an analytical mindset with creativity and persistence when solving complex tasks.',
       author: 'Sample colleague',
       role: 'Project collaborator',
@@ -64,8 +62,7 @@ export class References {
 
   cardTransform(index: number): string {
     const offset = this.cardOffset(index);
-    const scale = index === this.activeIndex() ? 1.1 : 1;
-    return `translateX(calc(-50% + ${offset * this.cardSpacing}px)) scale(${scale})`;
+    return `translateX(calc(-50% + ${offset} * var(--card-spacing))) scale(var(--card-scale))`;
   }
 
   isVisibleCard(index: number): boolean {

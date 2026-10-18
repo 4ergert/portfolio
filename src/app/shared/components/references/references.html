@@ -5,7 +5,7 @@
 
   <div class="references__viewport">
     <div class="references__track">
-      @for (reference of references; track reference.author + reference.role) {
+      @for (reference of references; track $index) {
         <article
           class="references__card"
           [class.references__card--active]="$index === activeIndex()"
@@ -30,7 +30,7 @@
 
   <div class="references__controls">
     <button type="button" aria-label="Show previous reference" (click)="previous()">&larr;</button>
-    @for (reference of references; track reference.author + reference.role) {
+    @for (reference of references; track $index) {
       <button
         type="button"
         class="references__dot"
