@@ -43,8 +43,6 @@
   .about_me {
     grid-template-columns: 1fr;
     gap: 40px;
-    width: calc(100% + 48px);
-    margin-left: -24px;
 
     &__img-container {
       width: 100%;
@@ -54,7 +52,6 @@
       width: 100%;
       height: 538px;
       object-fit: cover;
-      overflow: hidden;
     }
   }
 

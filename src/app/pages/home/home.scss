@@ -42,12 +42,12 @@ app-footer {
 
 @media (max-width: 450px) {
   technologies {
+    margin-top: 100px;
     padding: 0;
   }
-}
 
-@media (max-width: 450px) {
-  technologies {
+  projects {
     margin-top: 100px;
+    padding: 0;
   }
 }

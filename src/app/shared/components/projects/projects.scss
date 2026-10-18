@@ -84,7 +84,7 @@ h3:focus-visible .project-preview-wrapper {
   position: absolute;
   z-index: 0;
   inset: 0;
-  overflow: hidden;
+  // overflow: hidden;
   opacity: 0.7;
   transform: translate(18px, 18px);
   border-radius: 16px;
@@ -122,4 +122,38 @@ h3:focus-visible .project-preview-wrapper {
 .project_techs {
   display: flex;
   gap: 4px;
+}
+
+@media (max-width: 450px) {
+  .portfolio {
+    width: 100%;
+  }
+
+  h3 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 0;
+
+    span {
+      font-size: 24px;
+    }
+  }
+
+  .project_techs span {
+    font-size: 18px;
+  }
+
+  .project-preview-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .title {
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
 }
