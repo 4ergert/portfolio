@@ -13,6 +13,8 @@ interface Reference {
   styleUrl: './references.scss',
 })
 export class References {
+  private swipeStart: { id: number; x: number; y: number } | null = null;
+
   readonly references: Reference[] = [
     {
       quote: 'Placeholder reference: Julian approaches challenges with care, communicates clearly, and always looks for practical solutions.',
@@ -47,6 +49,49 @@ export class References {
   ];
 
   readonly activeIndex = signal(0);
+
+  onSwipeStart(event: PointerEvent): void {
+    if (!event.isPrimary || event.pointerType !== 'touch') {
+      return;
+    }
+
+    this.swipeStart = {
+      id: event.pointerId,
+      x: event.clientX,
+      y: event.clientY,
+    };
+
+    if (event.currentTarget instanceof HTMLElement) {
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+  }
+
+  onSwipeEnd(event: PointerEvent): void {
+    const start = this.swipeStart;
+    if (!start || start.id !== event.pointerId) {
+      return;
+    }
+
+    this.swipeStart = null;
+    const deltaX = event.clientX - start.x;
+    const deltaY = event.clientY - start.y;
+
+    if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      this.next();
+    } else {
+      this.previous();
+    }
+  }
+
+  onSwipeCancel(event: PointerEvent): void {
+    if (this.swipeStart?.id === event.pointerId) {
+      this.swipeStart = null;
+    }
+  }
 
   previous(): void {
     this.select(this.activeIndex() - 1);

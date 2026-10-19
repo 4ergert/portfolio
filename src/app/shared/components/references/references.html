@@ -3,7 +3,11 @@
     <p id="references-heading">What my colleagues say about me</p>
   </header>
 
-  <div class="references__viewport">
+  <div class="references__viewport"
+    (pointerdown)="onSwipeStart($event)"
+    (pointerup)="onSwipeEnd($event)"
+    (pointercancel)="onSwipeCancel($event)"
+    (lostpointercapture)="onSwipeCancel($event)">
     <div class="references__track">
       @for (reference of references; track $index) {
         <article
@@ -29,7 +33,7 @@
   </div>
 
   <div class="references__controls">
-    <button type="button" aria-label="Show previous reference" (click)="previous()">&larr;</button>
+    <button class="references__control--previous" type="button" aria-label="Show previous reference" (click)="previous()">&larr;</button>
     @for (reference of references; track $index) {
       <button
         type="button"
@@ -40,6 +44,6 @@
         (click)="select($index)"
       ></button>
     }
-    <button type="button" aria-label="Show next reference" (click)="next()">&rarr;</button>
+    <button class="references__control--next" type="button" aria-label="Show next reference" (click)="next()">&rarr;</button>
   </div>
 </section>

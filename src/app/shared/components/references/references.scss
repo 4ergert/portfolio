@@ -27,6 +27,7 @@
     width: 111%;
     margin-top: 50px;
     overflow: hidden;
+    touch-action: pan-y pinch-zoom;
   }
 
   &__track {
@@ -132,7 +133,11 @@
       background: transparent;
       color: #d9d9d9;
       cursor: pointer;
-      place-items: center;
+
+      &:hover {
+        color: #3dcfb6;
+        transition: transform 200ms ease, color 200ms ease;
+      }
 
       &:focus-visible {
         outline: 2px solid #3dcfb6;
@@ -151,6 +156,16 @@
       background-color: #3dcfb6 !important;
     }
   }
+}
+
+.references__control--previous:hover {
+  transition: transform 200ms ease, color 200ms ease;
+  transform: translateX(-3px);
+}
+
+.references__control--next:hover {
+  transition: transform 200ms ease, color 200ms ease;
+  transform: translateX(3px);
 }
 
 @media (max-width: 600px) {
