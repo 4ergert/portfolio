@@ -1,4 +1,4 @@
-.contact-me {
+.contact_me {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
@@ -215,4 +215,32 @@
       }
     }
   }
+}
+
+@media (max-width: 450px) {
+  .contact_me {
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    &__title {
+      font-size: 18px;
+
+
+    }
+
+    & h2 {
+      font-size: 56px;
+    }
+
+    &__form__divider {
+      padding: 32px 16px;
+    }
+
+    &__left-container {
+      &__subtitle {
+        font-size: 20px;
+      }
+    }
+  }
+
 }

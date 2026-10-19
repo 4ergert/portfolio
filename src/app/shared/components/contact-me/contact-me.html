@@ -1,8 +1,8 @@
-<section class="contact-me" id="contactMe">
-  <div class="contact-me__left-container">
-    <p class="contact-me__title">Contact me</p>
+<section class="contact_me" id="contactMe">
+  <div class="contact_me__left-container">
+    <p class="contact_me__title">Contact me</p>
     <h2>Let's work together</h2>
-    <p class="contact-me__left-container__subtitle">Got a problem to solve?</p>
+    <p class="contact_me__left-container__subtitle">Got a problem to solve?</p>
     <p>Encourage people to contact you and describe what role you are interested in. <br>
       Show that you will add value to
       their projects through your work.
@@ -12,14 +12,14 @@
     </p>
   </div>
 
-  <form class="contact-me__form" novalidate (submit)="onSubmit($event, nameInput.value, emailInput.value, messageInput.value, consentInput.checked, emailInput.validity.valid)">
+  <form class="contact_me__form" novalidate (submit)="onSubmit($event, nameInput.value, emailInput.value, messageInput.value, consentInput.checked, emailInput.validity.valid)">
     <hr>
-    <div class="contact-me__form__divider">
-      <label class="contact-me__form__label" for="name">What's your name?</label>
+    <div class="contact_me__form__divider">
+      <label class="contact_me__form__label" for="name">What's your name?</label>
       <input
         #nameInput
-        class="contact-me__form__input"
-        [class.contact-me__form__input--invalid]="nameMissing()"
+        class="contact_me__form__input"
+        [class.contact_me__form__input--invalid]="nameMissing()"
         [attr.aria-invalid]="nameMissing()"
         type="text"
         id="name"
@@ -32,12 +32,12 @@
       >
     </div>
     <hr>
-    <div class="contact-me__form__divider">
-      <label class="contact-me__form__label" for="email">What's your email?</label>
+    <div class="contact_me__form__divider">
+      <label class="contact_me__form__label" for="email">What's your email?</label>
       <input
         #emailInput
-        class="contact-me__form__input"
-        [class.contact-me__form__input--invalid]="emailMissing()"
+        class="contact_me__form__input"
+        [class.contact_me__form__input--invalid]="emailMissing()"
         [attr.aria-invalid]="emailMissing()"
         type="email"
         id="email"
@@ -51,12 +51,12 @@
       >
     </div>
     <hr>
-    <div class="contact-me__form__divider">
-      <label class="contact-me__form__label" for="message">How can I help you?</label>
+    <div class="contact_me__form__divider">
+      <label class="contact_me__form__label" for="message">How can I help you?</label>
       <input
         #messageInput
-        class="contact-me__form__input"
-        [class.contact-me__form__input--invalid]="messageMissing()"
+        class="contact_me__form__input"
+        [class.contact_me__form__input--invalid]="messageMissing()"
         [attr.aria-invalid]="messageMissing()"
         type="text"
         id="message"
@@ -88,13 +88,13 @@
       }
     </div>
 
-    <div class="contact-me__form__submit">
+    <div class="contact_me__form__submit">
       <button type="submit" [disabled]="sending()">
         <span>{{ sending() ? 'Sending...' : 'Say Hello ;)' }}</span>
       </button>
     </div>
     @if (submitMessage()) {
-      <p class="contact-me__form__status" [class.contact-me__form__status--success]="submitSucceeded()" role="status" aria-live="polite">
+      <p class="contact_me__form__status" [class.contact_me__form__status--success]="submitSucceeded()" role="status" aria-live="polite">
         {{ submitMessage() }}
       </p>
     }
