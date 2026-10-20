@@ -337,5 +337,22 @@ img {
 @media (max-width: 450px) {
   .content {
     flex-direction: column-reverse;
+    overflow: scroll;
+  }
+
+  .preview_overlay__project-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .preview_overlay__description__using_tech__item {
+    flex-direction: column;
+  }
+
+  .preview_overlay__dialog {
+    width: calc(100% - 20px);
+    height: 80vh;
+    max-height: 80vh;
+    margin: 0 10px;
   }
 }

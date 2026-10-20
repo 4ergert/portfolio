@@ -51,7 +51,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         // Empfängeradresse (nutzt die oben definierte Mail)
         $recipient = $siteEmail; 
-        $subject = 'Website Contact Form';
+        $subject = 'Mail from me Website';
 
         $mailBody = "
             <strong>Name:</strong> {$safeName}<br>
