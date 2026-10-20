@@ -18,8 +18,11 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
   readonly isReady = signal(false);
   readonly isAdvancing = signal(false);
   private animationFrameId: number | undefined;
+  private lockedScrollY = 0;
 
   ngAfterViewInit(): void {
+    this.lockPageScroll();
+
     const dialog = this.dialog().nativeElement;
     dialog.focus();
     dialog.addEventListener('keydown', this.onDialogKeydown);
@@ -36,10 +39,29 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.unlockPageScroll();
     this.dialog().nativeElement.removeEventListener('keydown', this.onDialogKeydown);
     if (this.animationFrameId !== undefined) {
       cancelAnimationFrame(this.animationFrameId);
     }
+  }
+
+  private lockPageScroll(): void {
+    this.lockedScrollY = window.scrollY;
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${this.lockedScrollY}px`;
+    document.body.style.width = '100%';
+  }
+
+  private unlockPageScroll(): void {
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, this.lockedScrollY);
   }
 
   private readonly onDialogKeydown = (event: KeyboardEvent): void => {
