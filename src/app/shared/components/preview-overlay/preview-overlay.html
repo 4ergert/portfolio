@@ -36,8 +36,10 @@
         <section class="preview_overlay__actions">
           <button class="preview_overlay__action_button" type="button"><a [href]="project().githubLink" target="_blank"
               rel="noopener noreferrer">Github</a></button>
-          <button class="preview_overlay__action_button" type="button"><a target="_blank"
-              rel="noopener noreferrer">Live Demo</a></button>
+          @if (project().liveDemoLink) {
+            <button class="preview_overlay__action_button" type="button"><a [href]="project().liveDemoLink" target="_blank"
+                rel="noopener noreferrer">Live Demo</a></button>
+          }
         </section>
       </section>
 

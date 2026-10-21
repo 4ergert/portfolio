@@ -6,6 +6,7 @@ export interface ProjectPreview {
   description: string;
   using: readonly string[];
   githubLink: string;
+  liveDemoLink?: string;
 }
 
 export const PROJECTS: readonly ProjectPreview[] = [
@@ -16,7 +17,8 @@ export const PROJECTS: readonly ProjectPreview[] = [
     alt: "Preview of Louan's Reise",
     description: "A jump-and-run game where Louan embarks on a journey to find his siblings.",
     using: ['HTML', 'CSS', 'JavaScript'],
-    githubLink: 'https://github.com/4ergert/Louan-s-Reise'
+    githubLink: 'https://github.com/4ergert/Louan-s-Reise',
+    liveDemoLink: 'https://louans-reise.julian-hergert.de'
   },
   {
     id: '02',
