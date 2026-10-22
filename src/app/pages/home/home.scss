@@ -41,9 +41,18 @@ app-footer {
 }
 
 @media (max-width: 1300px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   technologies {
     margin-top: 100px;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 700px);
   }
 
   projects {

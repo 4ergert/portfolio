@@ -17,7 +17,15 @@
       font-weight: 400;
       font-style: Regular;
       font-size: 40px;
+
+      // Typing effect for the paragraph text
+      width: 18ch;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: type 2s steps(18);
+      @keyframes type { from { width: 0; } }
     }
+
 
     & h1 {
       margin: 12px 0 40px 0;
