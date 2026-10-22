@@ -1,9 +1,14 @@
 .about_me {
   grid-template-columns: 1fr 1fr;
   display: grid;
+  gap: 24px;
 
-  img {
+  .about_me__img {
     border-radius: 30px;
+    width: 100%;
+    height: auto;
+    //  width: 568px;
+    //  height: 378px;
   }
 
   figcaption {
@@ -40,14 +45,27 @@
 }
 
 
-@media (max-width: 1440px) {
-  
+@media (max-width: 1300px) {
+  .about_me {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 700px);
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .who_i_am {
+    margin-top: 0px;
+  }
 }
 
 @media (max-width: 450px) {
   .about_me {
-    grid-template-columns: 1fr;
-    gap: 40px;
+
 
     &__img-container {
       width: 100%;
@@ -66,7 +84,7 @@
 
   figcaption {
     padding: 20px 24px !important;
-    
+
   }
 
   .who_i_am {
