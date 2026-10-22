@@ -100,6 +100,23 @@
       &:hover {
         color: #3dcfb6;
       }
+
+      &__icon {
+        display: none;
+      }
+
+      &__hover-icon {
+        display: none;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+      }
+
+      &:hover &__hover-icon,
+      &:focus-visible &__hover-icon {
+        opacity: 1;
+      }
     }
 
     &__links {
@@ -206,5 +223,29 @@
 @media (max-width: 450px) {
   .lateral {
     height: 100vh;
+  }
+}
+
+@media (max-width: 820px) {
+  .lateral_right {
+    top: 65vh;
+    gap: 16px;
+
+    &__mail {
+      writing-mode: initial;
+      rotate: 0deg;
+
+      &__text {
+        display: none;
+      }
+
+      &__icon {
+        display: block;
+      }
+
+      &__hover-icon {
+        display: block;
+      }
+    }
   }
 }
