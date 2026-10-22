@@ -122,6 +122,30 @@ h3:focus-visible .project-preview-wrapper {
   gap: 4px;
 }
 
+@media (max-width: 1440px) {
+  .portfolio {
+    width: 55vw;
+  }
+}
+
+@media (max-width: 1300px) {
+  .portfolio {
+    width: min(100%, 700px);
+  }
+
+  .project-preview-wrapper {
+    top: calc(100% + 8px);
+    left: 50%;
+    width: min(320px, calc(100vw - 64px));
+    transform: translate(-50%, -8px);
+  }
+
+  h3:hover .project-preview-wrapper,
+  h3:focus-visible .project-preview-wrapper {
+    transform: translate(-50%, 0);
+  }
+}
+
 @media (max-width: 450px) {
   .portfolio {
     width: 100%;
@@ -142,7 +166,7 @@ h3:focus-visible .project-preview-wrapper {
   }
 
   .project-preview-wrapper {
-    display: none;
+    left: 0;
   }
 }
 
@@ -158,5 +182,4 @@ h3:focus-visible .project-preview-wrapper {
   .project_techs {
     gap: 0;
   }
-
 }
