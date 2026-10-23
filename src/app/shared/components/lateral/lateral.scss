@@ -61,9 +61,24 @@
 
     &__line {
       width: 1px;
-      height: 100%;
-      background-color: #3DCFB6;
+      height: 67%;
+      background: linear-gradient(to bottom,
+          #3dcfb6 0%,
+          transparent 100%);
+
+      &__bottom {
+        position: absolute;
+        bottom: 0;
+        width: 1px;
+        height: 22%;
+        background: linear-gradient(to top,
+            #3dcfb6 0%,
+            #3dcfb75d 30%,
+            transparent 100%);
+      }
     }
+
+
   }
 
   .arrow {
@@ -190,8 +205,22 @@
 
     &__line {
       width: 1px;
-      height: 100%;
-      background-color: #ffffff;
+      height: 64%;
+      background: linear-gradient(to bottom,
+          #ffffff 0%,
+          #3dcfb74f 65%,
+          transparent 100%);
+
+      &__bottom {
+        position: absolute;
+        bottom: 0;
+        width: 1px;
+        height: 20%;
+        background: linear-gradient(to top,
+            #3dcfb6 0%,
+            #3dcfb75d 30%,
+            transparent 100%);
+      }
     }
   }
 
