@@ -26,9 +26,9 @@
 
   &__dialog {
     position: relative;
-    width: min(1248px, 100%);
+    // width: min(1248px, 100%);
     max-height: calc(100vh - 48px);
-    overflow: auto;
+    // overflow: auto;
     padding: 91px 80px 64px 80px;
     border: 1px solid transparent;
     border-radius: 16px;
@@ -269,7 +269,7 @@ h1 {
 }
 
 h2 {
-  margin: 0 48px 24px 0;
+  margin: 0 0 24px 0;
   font-family: Fira Code;
   font-weight: 700;
   font-style: Bold;
@@ -324,6 +324,34 @@ img {
   }
 }
 
+@media (max-width: 1440px) {
+  .preview_overlay {
+    &__dialog {
+      padding-top: clamp(24px, 6vw, 64px);
+      padding-bottom: clamp(24px, 6vw, 64px);
+      padding-left: clamp(32px, 6vw, 80px);
+      padding-right: clamp(32px, 6vw, 80px);
+    }
+
+    &__project-image {
+      width: clamp(350px, 40vw, 570px);
+      height: auto;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 128px);
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 64px);
+    }
+    
+    &__description__what_is_this_project_about {
+      font-size: clamp(18px, 2vw, 24px);
+    }
+  }
+}
+
 @media (max-width: 600px) {
   .preview_overlay {
     padding: 16px;
@@ -334,7 +362,7 @@ img {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 950px) {
   .content {
     flex-direction: column;
     overflow-x: hidden;
@@ -351,55 +379,62 @@ img {
     }
   }
 
-  .preview_overlay__description__what_is_this_project_about {
-    font-size: 20px;
-  }
+  .preview_overlay {
+    &__description__what_is_this_project_about {
+      font-size: 20px;
+    }
 
-  .preview_overlay__description__text {
+    &__description__text {
     font-size: 16px;
-  }
+    }
 
+    &__dialog__right {
+      order: -1;
+      align-items: center;
+    }
 
-  // Image is shown before the text visually without using
-  // flex-direction: column-reverse, which would reverse the scroll
-  // direction too (scrollTop 0 would then show the bottom of the content).
-  .preview_overlay__dialog__right {
-    order: -1;
-  }
+    &__project-image {
+      width: min(100%, 570px);
+      height: auto;
 
-  .preview_overlay__project-image {
-    width: 100%;
-    height: auto;
+    }
+
+    &__dialog {
+      width: calc(100% - 20px);
+      height: 80vh;
+      max-height: 80vh;
+      // margin: 0 10px;
+      padding: clamp(16px, 5vw, 32px) clamp(16px, 5vw, 64px);
+      box-sizing: border-box;
+      overflow-anchor: none;
+    }
     
-  }
-
-  .preview_overlay__dialog {
-    width: calc(100% - 20px);
-    height: 80vh;
-    max-height: 80vh;
-    margin: 0 10px;
-    padding: 16px;
-    box-sizing: border-box;
-    overflow-anchor: none;
+    &__close {
+      position: relative;
+      top: 0;
+      right: -12px;
+      width: 32px;
+      height: 32px;
+    }
+    
+    &__action_button {
+      padding: 20px;
+  
+      & a {
+        font-size: 18px;
+      }
+    }
   }
 
   .close_button_area {
     margin: 0;
   }
+}
 
-  .preview_overlay__close {
-    position: relative;
-    top: 0;
-    right: -12px;
-    width: 32px;
-    height: 32px;
-  }
-
-  .preview_overlay__action_button {
-    padding: 20px;
-
-    & a {
-      font-size: 18px;
+@media (max-width: 400px) {
+  .preview_overlay {
+    &__dialog {
+      width: 100%;
     }
   }
 }
