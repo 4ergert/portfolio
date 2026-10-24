@@ -15,7 +15,7 @@
     p {
       margin: 0;
       font-family: Fira Code;
-      font-size: 32px;
+      font-size: clamp(16px, 4vw, 32px);
       font-weight: 700;
       color: #3dcfb6;
     }
@@ -31,9 +31,9 @@
   }
 
   &__track {
-    --card-width: 520px;
+    --card-width: clamp(380px, 50vw, 520px);
     --side-card-scale: 1;
-    --card-spacing: 600px;
+    --card-spacing: clamp(410px, 55vw, 600px);
     position: relative;
 
     height: 270px;
@@ -170,9 +170,9 @@
 
 @media (max-width: 600px) {
   .references {
-    &__track {
-      --card-width: calc(100vw - 48px);
-    }
+    // &__track {
+    //   --card-width: calc(100vw - 48px);
+    // }
 
     &__header {
       align-items: start;

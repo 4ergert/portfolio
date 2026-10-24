@@ -63,6 +63,8 @@ app-footer {
   projects {
     margin-top: 100px;
     padding: 0;
+    width: min(100%, 780px);
+    box-sizing: border-box;
   }
 
   contact-me {

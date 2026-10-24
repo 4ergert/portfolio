@@ -1,5 +1,7 @@
 .portfolio {
   width: 880px;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .title {
@@ -84,7 +86,6 @@ h3:focus-visible .project-preview-wrapper {
   position: absolute;
   z-index: 0;
   inset: 0;
-  // overflow: hidden;
   opacity: 0.7;
   transform: translate(18px, 18px);
   border-radius: 16px;
@@ -130,7 +131,7 @@ h3:focus-visible .project-preview-wrapper {
 
 @media (max-width: 1300px) {
   .portfolio {
-    width: min(100%, 700px);
+    width: 100%;
   }
 
   .project-preview-wrapper {
@@ -146,14 +147,36 @@ h3:focus-visible .project-preview-wrapper {
   }
 }
 
+@media (max-width: 750px) {
+  .portfolio {
+    & h2 {
+      font-size: clamp(18px, 8vw, 64px);
+    }
+
+    & .project-title {
+      font-size: clamp(16px, 4vw, 24px);
+    }
+
+    & p,
+    span {
+      font-size: clamp(14px, 3vw, 18px);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  h3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 450px) {
   .portfolio {
     width: 100%;
   }
 
   h3 {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 32px 0;
 
     span {
