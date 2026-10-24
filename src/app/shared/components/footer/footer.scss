@@ -81,6 +81,16 @@
   }
 }
 
+@media (max-width: 1300px) {
+  :host {
+    width: min(100%, 780px);
+  }
+
+  .footer {
+    padding: 0 16px;
+  }
+}
+
 @media (max-width: 450px) {
   .footer {
     flex-wrap: wrap;

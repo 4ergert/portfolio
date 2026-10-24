@@ -217,6 +217,17 @@
   }
 }
 
+@media (max-width: 1300px) {
+  :host {
+    padding: 0 16px;
+
+    .contact_me {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+}
+
 @media (max-width: 450px) {
   .contact_me {
     grid-template-columns: 1fr;

@@ -4,11 +4,15 @@
   font-style: Bold;
   font-size: 24px;
   color: #3dcfb6;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .content {
   display: flex;
   gap: 32px;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .skill_set {
@@ -163,8 +167,6 @@
       }
     }
   }
-
-
 }
 
 @media (max-width: 390px) {

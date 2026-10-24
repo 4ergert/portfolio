@@ -61,6 +61,8 @@
   &__logo {
     display: block;
     flex-shrink: 0;
+    width: 300px;
+    margin-top: 20px;
   }
 
   &__menu-toggle,
@@ -156,6 +158,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .nav_bar__menu-toggle span,
   .nav_bar__menu {
     transition: none;

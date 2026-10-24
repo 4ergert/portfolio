@@ -47,12 +47,17 @@ app-footer {
     align-items: center;
   }
 
+  about-me,
+  technologies {
+    width: min(100%, 780px);
+    box-sizing: border-box;
+  }
+
   technologies {
     margin-top: 100px;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    width: min(100%, 700px);
+    padding: 0;
   }
 
   projects {
@@ -62,7 +67,6 @@ app-footer {
 
   contact-me {
     margin-top: 100px;
-    padding: 0;
   }
 
   app-footer {
