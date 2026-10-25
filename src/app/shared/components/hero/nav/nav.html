@@ -7,16 +7,21 @@
         <li><a href="#projects">{{ i18n.translate('nav.projects') }}</a></li>
       </ul>
     </div>
-    <img class="nav_bar__logo" src="img/logo/JH-Logo.png" alt="JH Logo" width="400" height="auto">
+    <a class="nav_bar__logo" routerLink="/" (click)="closeMenu()">
+      <picture>
+        <source class="logo_symbol" media="(max-width: 700px)" srcset="img/logo/JH-Logo-symbol.png" >
+        <img src="img/logo/JH-Logo.png" alt="Julian Hergert – Home" width="400" height="auto">
+      </picture>
+    </a>
 
-    <button class="nav_bar__menu-toggle" type="button" [attr.aria-label]="i18n.translate('nav.openMenu')"
+    <button #menuToggle class="nav_bar__menu-toggle" type="button" [attr.aria-label]="i18n.translate('nav.openMenu')"
       [attr.aria-expanded]="isMenuOpen()" aria-controls="mobile-navigation-menu" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <div id="mobile-navigation-menu" class="nav_bar__menu" [class.nav_bar__menu--open]="isMenuOpen()">
+    <div #menu id="mobile-navigation-menu" class="nav_bar__menu" [class.nav_bar__menu--open]="isMenuOpen()">
       <ul>
         <li><a href="#aboutMe" (click)="closeMenu()">{{ i18n.translate('nav.about') }}</a></li>
         <li><a href="#technologies" (click)="closeMenu()">{{ i18n.translate('nav.skills') }}</a></li>

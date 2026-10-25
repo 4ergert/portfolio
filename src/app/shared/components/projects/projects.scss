@@ -194,6 +194,10 @@ h3:focus-visible .project-preview-wrapper {
 }
 
 @media (max-width: 380px) {
+  .portfolio {
+    padding: 0;
+  }
+  
   .title {
     margin-bottom: 16px;
   }
@@ -204,5 +208,9 @@ h3:focus-visible .project-preview-wrapper {
 
   .project_techs {
     gap: 0;
+  }
+
+  .project_techs span {
+    font-size: 16px;
   }
 }

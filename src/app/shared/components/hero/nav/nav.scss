@@ -63,6 +63,12 @@
     flex-shrink: 0;
     width: 300px;
     margin-top: 20px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__menu-toggle,
@@ -157,8 +163,16 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 700px) {
+  .nav_bar {
+    &__logo {
+      margin-top: 0px;
+      width: clamp(100px, 30vw, 150px);
+    }
+  }
+}
 
+@media (prefers-reduced-motion: reduce) {
   .nav_bar__menu-toggle span,
   .nav_bar__menu {
     transition: none;

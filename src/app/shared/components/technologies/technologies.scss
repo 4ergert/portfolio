@@ -170,6 +170,10 @@
 }
 
 @media (max-width: 390px) {
+  .content {
+    padding: 0;
+  }
+  
   .skill_set {
     &__technology {
       width: 80px;

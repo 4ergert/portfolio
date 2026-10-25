@@ -1,6 +1,9 @@
 <section class="footer">
   <section class="footer__left">
-    <img src="img/logo/JH-Logo.png" alt="JH Logo" width="200" height="auto">
+    <picture>
+      <source media="(max-width: 700px)" srcset="img/logo/JH-Logo-symbol.png">
+      <img src="img/logo/JH-Logo.png" alt="JH Logo" width="200" height="auto">
+    </picture>
     <div class="footer__left__under_logo">
       <p>{{ i18n.translate('footer.role') }}</p>
       <p>{{ i18n.translate('footer.location') }}</p>

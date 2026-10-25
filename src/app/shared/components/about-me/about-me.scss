@@ -67,6 +67,10 @@
 }
 
 @media (max-width: 450px) {
+  :host {
+    padding: 0;
+  }
+
   .about_me {
     &__img-container {
       width: 100%;

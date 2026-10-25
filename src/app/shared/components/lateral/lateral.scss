@@ -97,7 +97,6 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    overflow: hidden;
 
     a {
       pointer-events: auto;
@@ -276,5 +275,12 @@
         display: block;
       }
     }
+  }
+}
+
+@media (max-width: 1100px) {
+  .lateral_right__github-link::after,
+  .lateral_right__linkedin-link::after {
+    display: none;
   }
 }
