@@ -240,12 +240,30 @@
   img {
     width: 32px;
     height: 32px;
+    transition: transform 300ms ease;
+  }
+
+  &--scroll {
+    span {
+      display: none;
+    }
+
+    img {
+      transform: rotate(90deg);
+    }
   }
 
   &__area {
+    flex-shrink: 0;
     width: 100%;
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forward_button img {
+    transition: none;
   }
 }
 

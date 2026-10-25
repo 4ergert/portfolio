@@ -16,9 +16,13 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
   readonly closed = output<void>();
   readonly nextProject = output<void>();
   readonly dialog = viewChild.required<ElementRef<HTMLElement>>('dialog');
+  readonly content = viewChild.required<ElementRef<HTMLElement>>('content');
   readonly projectImage = viewChild.required<ElementRef<HTMLImageElement>>('projectImage');
   readonly isReady = signal(false);
   readonly isAdvancing = signal(false);
+  readonly isScrollPending = signal(false);
+  private compactViewport!: MediaQueryList;
+  private contentResizeObserver!: ResizeObserver;
   private animationFrameId: number | undefined;
   private lockedScrollY = 0;
 
@@ -28,6 +32,16 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
     const dialog = this.dialog().nativeElement;
     dialog.focus();
     dialog.addEventListener('keydown', this.onDialogKeydown);
+
+    this.compactViewport = window.matchMedia('(max-width: 950px)');
+    this.compactViewport.addEventListener('change', this.updateScrollState);
+    this.contentResizeObserver = new ResizeObserver(this.updateScrollState);
+    const content = this.content().nativeElement;
+    this.contentResizeObserver.observe(content);
+    for (const child of content.children) {
+      this.contentResizeObserver.observe(child);
+    }
+    this.updateScrollState();
 
     const image = this.projectImage().nativeElement;
     const target = image.getBoundingClientRect();
@@ -43,6 +57,8 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     this.unlockPageScroll();
     this.dialog().nativeElement.removeEventListener('keydown', this.onDialogKeydown);
+    this.compactViewport.removeEventListener('change', this.updateScrollState);
+    this.contentResizeObserver.disconnect();
     if (this.animationFrameId !== undefined) {
       cancelAnimationFrame(this.animationFrameId);
     }
@@ -76,9 +92,28 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
     this.closed.emit();
   }
 
+  readonly updateScrollState = (): void => {
+    const content = this.content().nativeElement;
+    this.isScrollPending.set(
+      this.compactViewport.matches &&
+      content.scrollHeight - content.clientHeight - content.scrollTop > 2,
+    );
+  };
+
   advance(): void {
+    if (this.isScrollPending()) {
+      const content = this.content().nativeElement;
+      content.scrollTo({
+        top: content.scrollHeight,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+      });
+      return;
+    }
+
     this.isAdvancing.set(true);
     this.nextProject.emit();
+    this.content().nativeElement.scrollTop = 0;
+    this.updateScrollState();
   }
 
   resetAdvanceFeedback(): void {

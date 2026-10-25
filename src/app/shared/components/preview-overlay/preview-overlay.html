@@ -11,7 +11,7 @@
         (click)="close()"></button>
     </div>
 
-    <div class="content">
+    <div #content class="content" (scroll)="updateScrollState()">
       <section class="preview_overlay__left">
         <header>
           <h1>{{ project().id }}</h1>
@@ -50,13 +50,13 @@
     </div>
 
     <div class="forward_button__area">
-      <button class="forward_button" [class.forward_button--pressed]="isAdvancing()" type="button"
-        [attr.aria-label]="i18n.translate('projects.nextAria')" (click)="advance()">
+      <button class="forward_button" [class.forward_button--pressed]="isAdvancing()"
+        [class.forward_button--scroll]="isScrollPending()" type="button"
+        [attr.aria-label]="i18n.translate(isScrollPending() ? 'projects.scrollDown' : 'projects.nextAria')" (click)="advance()">
         <span (animationend)="resetAdvanceFeedback()">{{ i18n.translate('projects.next') }}</span><img src="icon/overlay/arrow_forward.png"
-          alt="Arrow forward icon">
+          alt="" aria-hidden="true">
       </button>
     </div>
-    
 
   </section>
 </div>
