@@ -17,6 +17,7 @@ describe('PreviewOverlay scroll navigation', () => {
     compact = true;
     disconnect = vi.fn();
     removeMediaListener = vi.fn();
+    vi.spyOn(window, 'scrollY', 'get').mockReturnValue(720);
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
     vi.stubGlobal('matchMedia', vi.fn(() => ({
       get matches() { return compact; },
@@ -113,6 +114,14 @@ describe('PreviewOverlay scroll navigation', () => {
     Object.defineProperty(content, 'scrollHeight', { configurable: true, value: 800 });
     resize();
     expect(component.isScrollPending()).toBe(true);
+  });
+
+  it('restores the original page position without smooth scrolling when closed', () => {
+    expect(document.body.style.top).toBe('-720px');
+    fixture.destroy();
+    expect(window.scrollTo).toHaveBeenCalledExactlyOnceWith({ top: 720, behavior: 'instant' });
+    expect(document.body.style.position).toBe('');
+    expect(document.documentElement.style.overflow).toBe('');
   });
 
   it('removes media listeners and resize observation when closed', () => {

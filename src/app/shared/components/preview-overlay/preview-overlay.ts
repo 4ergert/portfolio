@@ -79,7 +79,7 @@ export class PreviewOverlay implements AfterViewInit, OnDestroy {
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
-    window.scrollTo(0, this.lockedScrollY);
+    window.scrollTo({ top: this.lockedScrollY, behavior: 'instant' });
   }
 
   private readonly onDialogKeydown = (event: KeyboardEvent): void => {

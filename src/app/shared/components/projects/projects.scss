@@ -147,6 +147,12 @@ h3:focus-visible .project-preview-wrapper {
   }
 }
 
+@media (width < 950px) {
+  .project-preview-wrapper {
+    display: none;
+  }
+}
+
 @media (max-width: 750px) {
   .portfolio {
     & h2 {

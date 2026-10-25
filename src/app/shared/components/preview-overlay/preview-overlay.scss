@@ -26,9 +26,7 @@
 
   &__dialog {
     position: relative;
-    // width: min(1248px, 100%);
     max-height: calc(100vh - 48px);
-    // overflow: auto;
     padding: 91px 80px 64px 80px;
     border: 1px solid transparent;
     border-radius: 16px;
@@ -36,8 +34,8 @@
     box-shadow: none;
     display: flex;
     flex-direction: column;
-    transition: border-color 250ms ease 650ms, background-color 250ms ease 650ms,
-      box-shadow 250ms ease 650ms;
+    transition: border-color 250ms ease 350ms, background-color 250ms ease 350ms,
+      box-shadow 250ms ease 350ms;
 
     &__left {
       display: flex;
@@ -84,7 +82,9 @@
       &_tech {
         display: flex;
         align-items: center;
-        gap: 16px;
+        flex-wrap: wrap;
+        column-gap: 16px;
+        row-gap: 0px;
 
         & img {
           display: block;
@@ -310,7 +310,7 @@ img {
   --origin-scale-y: 1;
   transform: translate(var(--origin-x), var(--origin-y)) scale(var(--origin-scale-x), var(--origin-scale-y));
   transform-origin: top left;
-  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .preview_overlay--ready .preview_overlay__project-image {
@@ -328,7 +328,7 @@ img {
   .close_button_area,
   .preview_overlay__left,
   .forward_button__area {
-    transition: opacity 250ms ease 650ms;
+    transition: opacity 250ms ease 350ms;
   }
 }
 
@@ -338,7 +338,7 @@ img {
   .preview_overlay__left,
   .forward_button__area {
     opacity: 1;
-    transition: opacity 250ms ease 650ms;
+    transition: opacity 250ms ease 350ms;
   }
 }
 
@@ -421,7 +421,6 @@ img {
       width: calc(100% - 20px);
       height: 80vh;
       max-height: 80vh;
-      // margin: 0 10px;
       padding: clamp(16px, 5vw, 32px) clamp(16px, 5vw, 64px);
       box-sizing: border-box;
       overflow-anchor: none;
@@ -449,10 +448,30 @@ img {
   }
 }
 
+@media (width < 950px) {
+  .preview_overlay .preview_overlay__project-image {
+    transform: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 400px) {
   .preview_overlay {
     &__dialog {
       width: 100%;
     }
+  }
+
+  .preview_overlay__actions {
+    & button {
+      flex: 1 1 100%;
+      font-size: 16px;
+      padding: 8px 4px;
+      border-radius: 32px;
+    }
+  }
+
+  .preview_overlay__description__using_tech p{
+    margin: 8px;
   }
 }
