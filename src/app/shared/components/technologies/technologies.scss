@@ -154,6 +154,7 @@
   .content {
     flex-direction: column;
     gap: 40px;
+    padding: 0;
   }
 
   .skill_set {
@@ -161,6 +162,8 @@
     padding: 24px 32px;
 
     &__technologies {
+      padding: 0;
+      
       & img {
         width: 60px;
         height: 60px;
@@ -170,10 +173,7 @@
 }
 
 @media (max-width: 390px) {
-  .content {
-    padding: 0;
-  }
-  
+ 
   .skill_set {
     &__technology {
       width: 80px;
