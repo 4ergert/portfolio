@@ -35,11 +35,12 @@ export const PROJECTS: readonly ProjectPreview[] = [
       de: 'Eine App zum Erstellen und Teilnehmen an Umfragen. Nutzer können über verschiedene Themen abstimmen und Ergebnisse in Echtzeit sehen.',
     },
     using: ['HTML', 'CSS', 'TypeScript', 'Angular'],
-    githubLink: 'https://github.com/4ergert/poll-app'
+    githubLink: 'https://github.com/4ergert/poll-app',
+    liveDemoLink: 'https://poll-app.julian-hergert.de'
   },
   {
     id: '03',
-    title: { en: 'Kanban Board', de: 'Kanban-Board' },
+    title: { en: 'Join', de: 'Join' },
     image: 'img/kanban.png',
     alt: { en: 'Preview of Kanban Board', de: 'Vorschau des Kanban-Boards' },
     description: {
@@ -47,7 +48,8 @@ export const PROJECTS: readonly ProjectPreview[] = [
       de: 'Ein digitales Kanban-Board zur Aufgabenverwaltung. Aufgaben lassen sich in Spalten organisieren und Fortschritte übersichtlich verfolgen.',
     },
     using: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-    githubLink: 'https://github.com/krummi14/Join---kanban-board'
+    githubLink: 'https://github.com/krummi14/Join---kanban-board',
+    liveDemoLink: 'https://join.julian-hergert.de'
   },
   {
     id: '04',
@@ -60,5 +62,5 @@ export const PROJECTS: readonly ProjectPreview[] = [
     },
     using: ['HTML', 'CSS', 'TypeScript'],
     githubLink: 'https://github.com/4ergert/memory-game'
-  },
+  }
 ];
