@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, signal, input, output, viewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, inject, signal, input, output, viewChild } from '@angular/core';
 import type { PreviewOrigin } from '../projects/projects';
 import type { ProjectPreview } from '../projects/projects.data';
+import { LanguageService } from '../../language-switcher/language.service';
 
 @Component({
   selector: 'app-preview-overlay',
@@ -9,6 +10,7 @@ import type { ProjectPreview } from '../projects/projects.data';
   styleUrl: './preview-overlay.scss',
 })
 export class PreviewOverlay implements AfterViewInit, OnDestroy {
+  readonly i18n = inject(LanguageService);
   readonly project = input.required<ProjectPreview>();
   readonly origin = input.required<PreviewOrigin>();
   readonly closed = output<void>();

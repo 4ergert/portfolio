@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../../language-switcher/language.service';
 
 @Component({
   selector: 'app-marquee',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './marquee.html',
   styleUrl: './marquee.scss',
 })
-export class Marquee {}
+export class Marquee {
+  readonly i18n = inject(LanguageService);
+}

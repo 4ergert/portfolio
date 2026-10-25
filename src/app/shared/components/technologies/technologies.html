@@ -1,62 +1,58 @@
-<p class="title" id="technologies">Technologies</p>
+<p class="title" id="technologies">{{ i18n.translate('technologies.title') }}</p>
 <section class="content">
   <section class="skill_set">
     <div class="skill_set__discription">
-      <h2 appMatrixRain>Skill Set</h2>
-      <p>I have experience working with HTML, CSS, JavaScript, TypeScript, and Angular to build modern front-end
-        applications. I also use Supabase, REST APIs, Git, and Scrum to create structured, collaborative projects.
-        Through
-        personal projects and teamwork, I continuously expand my skills, explore new technologies, and adapt to the
-        fast-moving world of web development.</p>
-      <span class="skill_set__you_need">You need</span><span class="skill_set__another_skill"> another skill?</span>
-      <p>Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
-      <a href="#contactMe"><button><span>Let's talk</span></button></a>
+      <h2 appMatrixRain>{{ i18n.translate('technologies.skillSet') }}</h2>
+      <p>{{ i18n.translate('technologies.description') }}</p>
+      <span class="skill_set__you_need">{{ i18n.translate('technologies.youNeed') }}</span><span class="skill_set__another_skill">{{ i18n.translate('technologies.anotherSkill') }}</span>
+      <p>{{ i18n.translate('technologies.contact') }}</p>
+      <a href="#contactMe"><button><span>{{ i18n.translate('technologies.letsTalk') }}</span></button></a>
     </div>
   </section>
 
   <div class="skill_set__technologies">
     <div class="skill_set__technology">
-      <img src="icon/html.png" alt="html Icon">
+      <img src="icon/html.png" alt="">
       <p>HTML</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/css.png" alt="css Icon">
+      <img src="icon/css.png" alt="">
       <p>CSS</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/javascript.png" alt="javascript Icon">
+      <img src="icon/javascript.png" alt="">
       <p>JavaScript</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/material-design.png" alt="material design Icon">
-      <p>Material <br> Design</p>
+      <img src="icon/material-design.png" alt="">
+      <p>{{ i18n.language() === 'de' ? 'Materialdesign' : 'Material Design' }}</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/typescript.png" alt="typescript Icon">
+      <img src="icon/typescript.png" alt="">
       <p>TypeScript</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/angular.png" alt="angular Icon">
+      <img src="icon/angular.png" alt="">
       <p>Angular</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/supabase.png" alt="supabase Icon">
+      <img src="icon/supabase.png" alt="">
       <p>Supabase</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/api.png" alt="api Icon">
+      <img src="icon/api.png" alt="">
       <p>API</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/git.png" alt="git Icon">
+      <img src="icon/git.png" alt="">
       <p>Git</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/scrum.png" alt="scrum Icon">
+      <img src="icon/scrum.png" alt="">
       <p>Scrum</p>
     </div>
     <div class="skill_set__technology">
-      <img src="icon/mindset.png" alt="mindset Icon">
+      <img src="icon/mindset.png" alt="">
       <p>Mindset</p>
     </div>
   </div>

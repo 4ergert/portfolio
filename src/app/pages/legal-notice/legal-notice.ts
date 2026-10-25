@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Nav } from '../../shared/components/hero/nav/nav';
 import { Footer } from '../../shared/components/footer/footer';
+import { LanguageService } from '../../shared/language-switcher/language.service';
 
 @Component({
   selector: 'app-legal-notice',
@@ -8,4 +9,6 @@ import { Footer } from '../../shared/components/footer/footer';
   templateUrl: './legal-notice.html',
   styleUrl: './legal-notice.scss',
 })
-export class LegalNotice {}
+export class LegalNotice {
+  readonly i18n = inject(LanguageService);
+}

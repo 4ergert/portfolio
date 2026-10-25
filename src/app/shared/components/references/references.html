@@ -1,6 +1,6 @@
 <section class="references" aria-labelledby="references-heading">
   <header class="references__header">
-    <p id="references-heading">What my colleagues say about me</p>
+    <p id="references-heading">{{ i18n.translate('references.heading') }}</p>
   </header>
 
   <div class="references__viewport"
@@ -22,10 +22,10 @@
           @if ($index === activeIndex()) {
             <img class="references__quote-mark" src="img/66.png" alt="" width="90" height="64">
           }
-          <p>{{ reference.quote }}</p>
+          <p>{{ reference.quote[i18n.language()] }}</p>
           <footer>
             <span></span>
-            <small>{{ reference.author }} - {{ reference.role }}</small>
+            <small>{{ reference.author[i18n.language()] }} - {{ reference.role[i18n.language()] }}</small>
           </footer>
         </article>
       }
@@ -33,17 +33,17 @@
   </div>
 
   <div class="references__controls">
-    <button class="references__control--previous" type="button" aria-label="Show previous reference" (click)="previous()">&larr;</button>
+    <button class="references__control--previous" type="button" [attr.aria-label]="i18n.translate('references.previous')" (click)="previous()">&larr;</button>
     @for (reference of references; track $index) {
       <button
         type="button"
         class="references__dot"
         [class.references__dot--active]="$index === activeIndex()"
-        [attr.aria-label]="'Show reference ' + ($index + 1)"
+        [attr.aria-label]="i18n.translate('references.show') + ' ' + ($index + 1)"
         [attr.aria-current]="$index === activeIndex() ? 'true' : null"
         (click)="select($index)"
       ></button>
     }
-    <button class="references__control--next" type="button" aria-label="Show next reference" (click)="next()">&rarr;</button>
+    <button class="references__control--next" type="button" [attr.aria-label]="i18n.translate('references.next')" (click)="next()">&rarr;</button>
   </div>
 </section>

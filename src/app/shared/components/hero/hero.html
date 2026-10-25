@@ -1,11 +1,11 @@
 <app-nav></app-nav>
 <section class="hero">
   <section class="hero__section">
-    <p>Frontend Developer</p>
+    <p>{{ i18n.translate('hero.role') }}</p>
     <h1 appMatrixRain>Julian Hergert</h1>
     <section class="hero__buttons">
-      <button type="button" onclick="location.href='#projects'"><span>Check my work</span></button>
-      <button type="button" onclick="location.href='#contactMe'"><span>Contact Me</span></button>
+      <button type="button" onclick="location.href='#projects'"><span>{{ i18n.translate('hero.checkWork') }}</span></button>
+      <button type="button" onclick="location.href='#contactMe'"><span>{{ i18n.translate('hero.contact') }}</span></button>
     </section>
   </section>
 

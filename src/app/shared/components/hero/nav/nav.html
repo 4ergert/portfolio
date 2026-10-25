@@ -2,14 +2,14 @@
     <div class="nav_bar__language-switcher">
       <language-switcher></language-switcher>
       <ul>
-        <li><a href="#aboutMe">About me</a></li>
-        <li><a href="#technologies">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#aboutMe">{{ i18n.translate('nav.about') }}</a></li>
+        <li><a href="#technologies">{{ i18n.translate('nav.skills') }}</a></li>
+        <li><a href="#projects">{{ i18n.translate('nav.projects') }}</a></li>
       </ul>
     </div>
     <img class="nav_bar__logo" src="img/logo/JH-Logo.png" alt="JH Logo" width="400" height="auto">
 
-    <button class="nav_bar__menu-toggle" type="button" aria-label="Open navigation menu"
+    <button class="nav_bar__menu-toggle" type="button" [attr.aria-label]="i18n.translate('nav.openMenu')"
       [attr.aria-expanded]="isMenuOpen()" aria-controls="mobile-navigation-menu" (click)="toggleMenu()">
       <span></span>
       <span></span>
@@ -18,9 +18,9 @@
 
     <div id="mobile-navigation-menu" class="nav_bar__menu" [class.nav_bar__menu--open]="isMenuOpen()">
       <ul>
-        <li><a href="#aboutMe" (click)="closeMenu()">About me</a></li>
-        <li><a href="#technologies" (click)="closeMenu()">Skills</a></li>
-        <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
+        <li><a href="#aboutMe" (click)="closeMenu()">{{ i18n.translate('nav.about') }}</a></li>
+        <li><a href="#technologies" (click)="closeMenu()">{{ i18n.translate('nav.skills') }}</a></li>
+        <li><a href="#projects" (click)="closeMenu()">{{ i18n.translate('nav.projects') }}</a></li>
       </ul>
       <language-switcher></language-switcher>
     </div>

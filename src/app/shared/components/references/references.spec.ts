@@ -1,3 +1,4 @@
+import { TestBed } from '@angular/core/testing';
 import { References } from './references';
 
 describe('References swipe navigation', () => {
@@ -14,7 +15,8 @@ describe('References swipe navigation', () => {
   });
 
   beforeEach(() => {
-    component = new References();
+    TestBed.configureTestingModule({ imports: [References] });
+    component = TestBed.createComponent(References).componentInstance;
   });
 
   it('advances on a left swipe and goes back on a right swipe', () => {

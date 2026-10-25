@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { LanguageSwitcher } from '../../../language-switcher/language-switcher';
+import { LanguageService } from '../../../language-switcher/language.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,6 +9,7 @@ import { LanguageSwitcher } from '../../../language-switcher/language-switcher';
   styleUrl: './nav.scss',
 })
 export class Nav {
+  readonly i18n = inject(LanguageService);
   readonly isMenuOpen = signal(false);
 
   toggleMenu(): void {

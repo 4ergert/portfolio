@@ -1,4 +1,5 @@
-import { Component, model } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService, type Language } from './language.service';
 
 @Component({
   selector: 'language-switcher',
@@ -7,5 +8,9 @@ import { Component, model } from '@angular/core';
   styleUrl: './language-switcher.scss',
 })
 export class LanguageSwitcher {
-  readonly language = model<'en' | 'de'>('en');
+  readonly i18n = inject(LanguageService);
+
+  setLanguage(language: Language): void {
+    this.i18n.setLanguage(language);
+  }
 }

@@ -7,7 +7,7 @@
     aria-labelledby="preview-overlay-title" tabindex="-1" (click)="$event.stopPropagation()">
 
     <div class="close_button_area">
-      <button class="preview_overlay__close" type="button" aria-label="Close project preview"
+      <button class="preview_overlay__close" type="button" [attr.aria-label]="i18n.translate('projects.close')"
         (click)="close()"></button>
     </div>
 
@@ -15,11 +15,11 @@
       <section class="preview_overlay__left">
         <header>
           <h1>{{ project().id }}</h1>
-          <h2 id="preview_overlay__title">{{ project().title }}</h2>
+          <h2 id="preview_overlay__title">{{ project().title[i18n.language()] }}</h2>
         </header>
         <section class="preview_overlay__description">
-          <p class="preview_overlay__description__what_is_this_project_about">What is this project about?</p>
-          <p class="preview_overlay__description__text">{{ project().description }}</p>
+          <p class="preview_overlay__description__what_is_this_project_about">{{ i18n.translate('projects.about') }}</p>
+          <p class="preview_overlay__description__text">{{ project().description[i18n.language()] }}</p>
 
           <section class="preview_overlay__description__using">
             <div class="preview_overlay__description__using_tech">
@@ -35,23 +35,24 @@
 
         <section class="preview_overlay__actions">
           <button class="preview_overlay__action_button" type="button"><a [href]="project().githubLink" target="_blank"
-              rel="noopener noreferrer">Github</a></button>
+              rel="noopener noreferrer">{{ i18n.translate('projects.github') }}</a></button>
           @if (project().liveDemoLink) {
             <button class="preview_overlay__action_button" type="button"><a [href]="project().liveDemoLink" target="_blank"
-                rel="noopener noreferrer">Live Demo</a></button>
+                rel="noopener noreferrer">{{ i18n.translate('projects.liveDemo') }}</a></button>
           }
         </section>
       </section>
 
       <section class="preview_overlay__dialog__right">
-        <img #projectImage class="preview_overlay__project-image" [src]="project().image" [alt]="project().alt">
+        <img #projectImage class="preview_overlay__project-image" [src]="project().image"
+          [alt]="project().alt[i18n.language()]">
       </section>
     </div>
 
     <div class="forward_button__area">
       <button class="forward_button" [class.forward_button--pressed]="isAdvancing()" type="button"
-        aria-label="Next project" (click)="advance()">
-        <span (animationend)="resetAdvanceFeedback()">next project</span><img src="icon/overlay/arrow_forward.png"
+        [attr.aria-label]="i18n.translate('projects.nextAria')" (click)="advance()">
+        <span (animationend)="resetAdvanceFeedback()">{{ i18n.translate('projects.next') }}</span><img src="icon/overlay/arrow_forward.png"
           alt="Arrow forward icon">
       </button>
     </div>

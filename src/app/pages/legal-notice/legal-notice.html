@@ -3,46 +3,45 @@
 
   <main class="legal-notice__content">
     <header class="legal-notice__header">
-      <h1>Legal Notice</h1>
+      <h1>{{ i18n.translate('legal.title') }}</h1>
     </header>
 
     <section>
-      <h2>Imprint</h2>
+      <h2>{{ i18n.translate('legal.imprint') }}</h2>
       <p>
         Julian Hergert<br>
         Sandhövelstraße 32<br>
         48429 Rheine<br>
-        Germany
+        {{ i18n.translate('legal.country') }}
       </p>
     </section>
 
     <section>
-      <h2>Contact</h2>
+      <h2>{{ i18n.translate('legal.contact') }}</h2>
       <p>
-        Email: <a href="mailto:julian_hergert@gmx.de">julian_hergert@gmx.de</a><br>
-        Phone: <a class="tel" href="tel:+4917680689958"><p>+49 176/80689958</p></a>
+        {{ i18n.translate('legal.emailLabel') }} <a href="mailto:julian_hergert@gmx.de">julian_hergert@gmx.de</a><br>
+        {{ i18n.translate('legal.phoneLabel') }} <a class="tel" href="tel:+4917680689958">+49 176/80689958</a>
       </p>
     </section>
 
     <section>
-      <h2>Content responsibility</h2>
+      <h2>{{ i18n.translate('legal.contentResponsibility') }}</h2>
       <p>
-        Responsible for the content of this website: Julian Hergert, Sandhövelstraße 32, 48429 Rheine, Germany.
+        {{ i18n.translate('legal.contentResponsibilityText') }}
       </p>
     </section>
 
     <section>
-      <h2>External links</h2>
+      <h2>{{ i18n.translate('legal.externalLinks') }}</h2>
       <p>
-        This website may contain links to external websites. Their content is the responsibility of the respective
-        providers.
+        {{ i18n.translate('legal.externalLinksText') }}
       </p>
     </section>
 
     <section>
-      <h2>Copyright</h2>
+      <h2>{{ i18n.translate('legal.copyright') }}</h2>
       <p>
-        Unless otherwise stated, the content and design of this website may not be reused without permission.
+        {{ i18n.translate('legal.copyrightText') }}
       </p>
     </section>
 

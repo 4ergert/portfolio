@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../language-switcher/language.service';
 
 @Component({
   selector: 'about-me',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './about-me.html',
   styleUrl: './about-me.scss',
 })
-export class AboutMe {}
+export class AboutMe {
+  readonly i18n = inject(LanguageService);
+}

@@ -2,8 +2,8 @@
   <section class="footer__left">
     <img src="img/logo/JH-Logo.png" alt="JH Logo" width="200" height="auto">
     <div class="footer__left__under_logo">
-      <p>Web Developer</p>
-      <p>Rheine, Germany</p>
+      <p>{{ i18n.translate('footer.role') }}</p>
+      <p>{{ i18n.translate('footer.location') }}</p>
     </div>
   </section>
 
@@ -14,7 +14,7 @@
   <section class="footer__right">
     <a href="https://github.com/4ergert" target="_blank">Github</a>
     <a href="https://linkedin.com/in/julian-hergert-6a1769440?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
-    <a href="mailto:julian_hergert@gmx.de" target="_blank">Email</a>
-    <a routerLink="/legal-notice">Legal Notice</a>
+    <a href="mailto:julian_hergert@gmx.de" target="_blank">{{ i18n.translate('footer.email') }}</a>
+    <a routerLink="/legal-notice">{{ i18n.translate('footer.legalNotice') }}</a>
   </section>
 </section>

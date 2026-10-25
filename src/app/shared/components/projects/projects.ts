@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { PreviewOverlay } from '../preview-overlay/preview-overlay';
 import { PROJECTS, type ProjectPreview } from './projects.data';
+import { LanguageService } from '../../language-switcher/language.service';
 
 export interface PreviewOrigin {
   readonly top: number;
@@ -16,6 +17,7 @@ export interface PreviewOrigin {
   styleUrl: './projects.scss',
 })
 export class Projects {
+  readonly i18n = inject(LanguageService);
   readonly projects = PROJECTS;
   readonly selectedProject = signal<ProjectPreview | null>(null);
   readonly previewOrigin = signal<PreviewOrigin | null>(null);

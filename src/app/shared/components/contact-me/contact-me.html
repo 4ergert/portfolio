@@ -1,21 +1,17 @@
 <section class="contact_me" id="contactMe">
   <div class="contact_me__left-container">
-    <p class="contact_me__title">Contact me</p>
-    <h2>Let's work together</h2>
-    <p class="contact_me__left-container__subtitle">Got a problem to solve?</p>
-    <p>Encourage people to contact you and describe what role you are interested in. <br>
-      Show that you will add value to
-      their projects through your work.
-      <br>
-      <br>
-      Need a Frontend developer? <span>Let’s talk!</span>
+    <p class="contact_me__title">{{ i18n.translate('contact.title') }}</p>
+    <h2>{{ i18n.translate('contact.heading') }}</h2>
+    <p class="contact_me__left-container__subtitle">{{ i18n.translate('contact.subtitle') }}</p>
+    <p>{{ i18n.translate('contact.description') }}<br><br>
+      {{ i18n.translate('contact.needDeveloper') }} <span>{{ i18n.translate('contact.letsTalk') }}</span>
     </p>
   </div>
 
   <form class="contact_me__form" novalidate (submit)="onSubmit($event, nameInput.value, emailInput.value, messageInput.value, consentInput.checked, emailInput.validity.valid)">
     <hr>
     <div class="contact_me__form__divider">
-      <label class="contact_me__form__label" for="name">What's your name?</label>
+      <label class="contact_me__form__label" for="name">{{ i18n.translate('contact.nameLabel') }}</label>
       <input
         #nameInput
         class="contact_me__form__input"
@@ -24,7 +20,7 @@
         type="text"
         id="name"
         name="name"
-        [placeholder]="nameMissing() ? 'Oops! it seems your name is missing' : 'Your name goes here'"
+        [placeholder]="nameMissing() ? i18n.translate('contact.nameMissing') : i18n.translate('contact.namePlaceholder')"
         (click)="clearNameError()"
         (focus)="clearNameError()"
         (input)="clearNameError()"
@@ -33,7 +29,7 @@
     </div>
     <hr>
     <div class="contact_me__form__divider">
-      <label class="contact_me__form__label" for="email">What's your email?</label>
+      <label class="contact_me__form__label" for="email">{{ i18n.translate('contact.emailLabel') }}</label>
       <input
         #emailInput
         class="contact_me__form__input"
@@ -42,7 +38,7 @@
         type="email"
         id="email"
         name="email"
-        [placeholder]="emailMissing() ? 'Hoppla! your email is required' : 'youremail@email.com'"
+        [placeholder]="emailMissing() ? i18n.translate('contact.emailMissing') : i18n.translate('contact.emailPlaceholder')"
         (pointerdown)="clearEmailError()"
         (click)="clearEmailError()"
         (focus)="clearEmailError()"
@@ -52,7 +48,7 @@
     </div>
     <hr>
     <div class="contact_me__form__divider">
-      <label class="contact_me__form__label" for="message">How can I help you?</label>
+      <label class="contact_me__form__label" for="message">{{ i18n.translate('contact.messageLabel') }}</label>
       <input
         #messageInput
         class="contact_me__form__input"
@@ -61,7 +57,7 @@
         type="text"
         id="message"
         name="message"
-        [placeholder]="messageMissing() ? 'What do you need to develop?' : 'Hi Julian, I am interested in...'"
+        [placeholder]="messageMissing() ? i18n.translate('contact.messageMissing') : i18n.translate('contact.messagePlaceholder')"
         (click)="clearMessageError()"
         (focus)="clearMessageError()"
         (input)="clearMessageError()"
@@ -80,22 +76,21 @@
           (change)="clearConsentError()"
           required
         >
-        <label for="consent">I've read the <span class="legal_notice_link" routerLink="/legal-notice">privacy policy</span> and agree to the processing of my data as
-          outlined.</label>
+        <label for="consent">{{ i18n.translate('contact.privacyStart') }} <span class="legal_notice_link" routerLink="/legal-notice">{{ i18n.translate('contact.privacyPolicy') }}</span> {{ i18n.translate('contact.privacyEnd') }}</label>
       </div>
       @if (consentMissing()) {
-        <p class="checkbox-section__error">Please accept the privacy policy</p>
+        <p class="checkbox-section__error">{{ i18n.translate('contact.privacyError') }}</p>
       }
     </div>
 
     <div class="contact_me__form__submit">
       <button type="submit" [disabled]="sending()">
-        <span>{{ sending() ? 'Sending...' : 'Say Hello ;)' }}</span>
+        <span>{{ sending() ? i18n.translate('contact.sending') : i18n.translate('contact.submit') }}</span>
       </button>
     </div>
-    @if (submitMessage()) {
+    @if (submitMessage(); as messageKey) {
       <p class="contact_me__form__status" [class.contact_me__form__status--success]="submitSucceeded()" role="status" aria-live="polite">
-        {{ submitMessage() }}
+        {{ i18n.translate(messageKey) }}
       </p>
     }
   </form>

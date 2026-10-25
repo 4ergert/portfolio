@@ -1,15 +1,14 @@
 <section class="portfolio" id="projects">
-  <p class="title">Portfolio</p>
-  <h2>Featured Projects</h2>
-  <p class="description">Explore a selection of my work here - Interact with <br>
-    projects to see my skills in action.</p>
+  <p class="title">{{ i18n.translate('projects.title') }}</p>
+  <h2>{{ i18n.translate('projects.featured') }}</h2>
+  <p class="description">{{ i18n.translate('projects.description') }}</p>
   @for (project of projects; track project.id) {
   <hr>
   <h3 role="button" tabindex="0" (click)="openPreview(project, projectPreview)"
     (keydown.enter)="openPreview(project, projectPreview)"
     (keydown.space)="$event.preventDefault(); openPreview(project, projectPreview)">
 
-      <span class="project-title">{{ project.title }}</span>
+      <span class="project-title">{{ project.title[i18n.language()] }}</span>
       <section class="project_techs">
         @for (tech of project.using; track tech) {
         <span class="project_tech">{{ tech }}</span>
@@ -17,7 +16,7 @@
       </section>
       <div class="project-preview-wrapper">
         <div class="project-preview-rain" aria-hidden="true"></div>
-        <img #projectPreview class="project-preview" [src]="project.image" [alt]="project.alt">
+        <img #projectPreview class="project-preview" [src]="project.image" [alt]="project.alt[i18n.language()]">
       </div>
 
   </h3>
