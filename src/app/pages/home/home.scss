@@ -31,7 +31,6 @@ references {
 contact-me {
   display: block;
   margin-top: 150px;
-  padding: 0 24px;
 }
 
 app-footer {
@@ -69,10 +68,17 @@ app-footer {
 
   contact-me {
     margin-top: 100px;
+    padding: 0 24px;
   }
 
   app-footer {
     margin: 100px 0 32px 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  contact-me {
     padding: 0;
   }
 }
