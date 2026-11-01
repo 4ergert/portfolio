@@ -80,6 +80,61 @@
     gap: 72px;
   }
 
+  &__bubble {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 8px);
+    z-index: 2;
+    box-sizing: border-box;
+    width: 260px;
+    min-height: 156px;
+    padding: 20px;
+    border-radius: 24px;
+    background-color: #ffffff;
+    transition: background-color 200ms ease, opacity 200ms ease, visibility 200ms ease;
+    color: #3dcfb6;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.672);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      right: 36px;
+      width: 32px;
+      height: 22px;
+      background-color: #ffffff;
+      clip-path: polygon(0 0, 100% 0, 60% 90%, 50% 100%, 40% 90%);
+    }
+    
+    &__interested {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+
+      &_in {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+  }
+
+
+  &__technology--mindset {
+    position: relative;
+
+    &:hover .skill_set__bubble {
+      opacity: 1;
+      visibility: visible;
+      background-color: hsl(0, 0%, 100%);
+    }
+  }
+
   &__technology {
     width: 104px;
     height: 116px;
@@ -132,6 +187,19 @@
 }
 
 @media (max-width: 750px) {
+  .skill_set__bubble {
+    right: auto;
+    left: 50%;
+    width: min(260px, calc(100vw - 48px));
+    transform: translateX(-50%);
+
+    &::after {
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
   .skill_set {
     &__technologies {
       grid-template-columns: repeat(3, 1fr);
@@ -142,6 +210,12 @@
       justify-items: center;
 
 
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .skill_set__bubble {
+        transition: none;
+      }
     }
   }
 }
@@ -163,7 +237,7 @@
 
     &__technologies {
       padding: 0;
-      
+
       & img {
         width: 60px;
         height: 60px;
@@ -173,7 +247,7 @@
 }
 
 @media (max-width: 390px) {
- 
+
   .skill_set {
     &__technology {
       width: 80px;
