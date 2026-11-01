@@ -7,11 +7,8 @@
         <li><a href="#projects">{{ i18n.translate('nav.projects') }}</a></li>
       </ul>
     </div>
-    <a class="nav_bar__logo" routerLink="/" (click)="closeMenu()">
-      <picture>
-        <source class="logo_symbol" media="(max-width: 900px)" srcset="img/logo/JH-Logo-symbol.png" >
-        <img src="img/logo/JH-Logo.png" alt="Julian Hergert – Home" width="400" height="auto">
-      </picture>
+    <a class="nav_bar__logo" routerLink="/" aria-label="Julian Hergert – Home" (click)="closeMenu()">
+      <app-logo></app-logo>
     </a>
 
     <button #menuToggle class="nav_bar__menu-toggle" type="button" [attr.aria-label]="i18n.translate('nav.openMenu')"

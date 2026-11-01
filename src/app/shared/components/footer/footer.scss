@@ -7,6 +7,10 @@
     flex-direction: column;
     gap: 32px;
 
+    app-logo {
+      width: 200px;
+    }
+
     &__under_logo {
       display: flex;
       flex-direction: column;
@@ -99,9 +103,8 @@
     &__left {
       order: 1;
 
-      & img {
-        width: fit-content;
-        height: 50px;
+      app-logo {
+        width: 63px;
       }
     }
 

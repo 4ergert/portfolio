@@ -2,10 +2,11 @@ import { Component, ElementRef, inject, signal, viewChild } from '@angular/core'
 import { RouterLink } from '@angular/router';
 import { LanguageSwitcher } from '../../../language-switcher/language-switcher';
 import { LanguageService } from '../../../language-switcher/language.service';
+import { Logo } from '../../logo/logo';
 
 @Component({
   selector: 'app-nav',
-  imports: [LanguageSwitcher, RouterLink],
+  imports: [LanguageSwitcher, RouterLink, Logo],
   templateUrl: './nav.html',
   styleUrl: './nav.scss',
   host: {
