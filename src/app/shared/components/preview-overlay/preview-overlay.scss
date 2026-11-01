@@ -26,6 +26,8 @@
 
   &__dialog {
     position: relative;
+    box-sizing: border-box;
+    width: min(1440px, 100%);
     max-height: calc(100vh - 48px);
     padding: 91px 80px 64px 80px;
     border: 1px solid transparent;
@@ -363,7 +365,7 @@ img {
     h2 {
       font-size: clamp(32px, 4vw, 64px);
     }
-    
+
     &__description__what_is_this_project_about {
       font-size: clamp(18px, 2vw, 24px);
     }
@@ -403,7 +405,7 @@ img {
     }
 
     &__description__text {
-    font-size: 16px;
+      font-size: 16px;
     }
 
     &__dialog__right {
@@ -425,7 +427,7 @@ img {
       box-sizing: border-box;
       overflow-anchor: none;
     }
-    
+
     &__close {
       position: relative;
       top: 0;
@@ -433,10 +435,10 @@ img {
       width: 32px;
       height: 32px;
     }
-    
+
     &__action_button {
       padding: 20px;
-  
+
       & a {
         font-size: 18px;
       }
@@ -471,7 +473,7 @@ img {
     }
   }
 
-  .preview_overlay__description__using_tech p{
+  .preview_overlay__description__using_tech p {
     margin: 8px;
   }
 }

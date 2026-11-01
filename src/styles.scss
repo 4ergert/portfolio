@@ -1,5 +1,6 @@
 @use './styles/fonts';
 @use './app/shared/directives/string-to-matrixrain/matrix-rain';
+@use './app/shared/directives/cursor-glow/cursor-glow.directive';
 
 html {
   scroll-behavior: smooth;

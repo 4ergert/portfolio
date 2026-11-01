@@ -61,6 +61,7 @@ export const PROJECTS: readonly ProjectPreview[] = [
       de: 'Ein klassisches Memory-Spiel, bei dem Kartenpaare gefunden werden. Teste und verbessere dein Gedächtnis.',
     },
     using: ['HTML', 'CSS', 'TypeScript'],
-    githubLink: 'https://github.com/4ergert/memory-game'
+    githubLink: 'https://github.com/4ergert/memory-game',
+    liveDemoLink: 'https://memory-game.julian-hergert.de'
   }
 ];

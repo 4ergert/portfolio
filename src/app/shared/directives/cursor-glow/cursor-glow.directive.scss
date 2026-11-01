@@ -1,0 +1,24 @@
+.app-cursor-glow::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  opacity: 0;
+  background: radial-gradient(
+    circle 150px at var(--cursor-x, -1000px) var(--cursor-y, -1000px),
+    rgba(61, 207, 183, 0.13),
+    transparent 100%
+  );
+  transition: opacity 250ms ease;
+}
+
+.app-cursor-glow--visible::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-cursor-glow::before {
+    transition: none;
+  }
+}
