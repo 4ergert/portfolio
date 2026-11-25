@@ -11,4 +11,11 @@ import { Logo } from '../logo/logo';
 })
 export class Footer {
   readonly i18n = inject(LanguageService);
+
+  scrollToTop(): void {
+    const behavior: ScrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ? 'instant'
+      : 'smooth';
+    window.scrollTo({ top: 0, behavior });
+  }
 }

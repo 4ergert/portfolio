@@ -1,6 +1,6 @@
 <section class="lateral">
   <div class="lateral_left">
-    <div class="lateral_left__scroll_icon">
+    <button type="button" class="lateral_left__scroll_icon" (click)="scrollToFooter()" [attr.aria-label]="i18n.translate('lateral.scrollToFooter')">
       <div class="arrow">
         <div class="lateral_left__scroll_icon__line"></div>
         <div class="lateral_left__scroll_icon__arrow">
@@ -8,7 +8,7 @@
           <div class="lateral_left__scroll_icon__arrow__right"></div>
         </div>
       </div>
-    </div>
+    </button>
     <div class="lateral_left__line"></div>
     <div class="lateral_left__line__bottom"></div>
   </div>

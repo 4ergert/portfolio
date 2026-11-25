@@ -12,6 +12,15 @@
   </section>
 
   <section class="footer__right">
+    <button type="button" class="footer__scroll_top" (click)="scrollToTop()" [attr.aria-label]="i18n.translate('footer.scrollToTop')">
+      <div class="footer__scroll_top__arrow">
+        <div class="footer__scroll_top__line"></div>
+        <div class="footer__scroll_top__chevron">
+          <div class="footer__scroll_top__chevron__left"></div>
+          <div class="footer__scroll_top__chevron__right"></div>
+        </div>
+      </div>
+    </button>
     <a href="https://github.com/4ergert" target="_blank">Github</a>
     <a href="https://linkedin.com/in/julian-hergert-6a1769440?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
     <a href="mailto:julian_hergert@gmx.de" target="_blank">{{ i18n.translate('footer.email') }}</a>
