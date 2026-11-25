@@ -154,9 +154,10 @@ npm run build
 This compiles the project into `dist/portfolio/` using the production configuration.
 For a development build that watches for changes, run `npm run watch`.
 
-## Running unit tests
+## Tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+The project contains unit tests that run with [Vitest](https://vitest.dev/)
+through Angular's unit-test builder:
 
 ```bash
 npm test
@@ -168,6 +169,10 @@ For a single non-watch run:
 npm test -- --watch=false
 ```
 
+The suite currently has a failing test in [app.spec.ts](src/app/app.spec.ts):
+it still expects the generated Angular welcome title, which the app no longer
+renders.
+
 To run only the logo and cursor-glow tests:
 
 ```bash
@@ -176,9 +181,9 @@ npm test -- --watch=false --include=src/app/shared/components/logo/logo.spec.ts 
 
 ## End-to-end testing
 
-No end-to-end runner or `e2e` target is configured in
-[angular.json](angular.json). Set up an end-to-end framework before using
-`ng e2e`; the unit tests use Vitest.
+There are currently no end-to-end tests, no end-to-end runner, and no `e2e`
+target configured in [angular.json](angular.json). Running the unit tests
+does not perform end-to-end testing.
 
 ## Additional Resources
 

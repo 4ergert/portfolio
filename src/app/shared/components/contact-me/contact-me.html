@@ -76,7 +76,7 @@
           (change)="clearConsentError()"
           required
         >
-        <label for="consent">{{ i18n.translate('contact.privacyStart') }} <span class="legal_notice_link" routerLink="/legal-notice">{{ i18n.translate('contact.privacyPolicy') }}</span> {{ i18n.translate('contact.privacyEnd') }}</label>
+        <label for="consent">{{ i18n.translate('contact.privacyStart') }} <span class="legal_notice_link" routerLink="/privacy-policy">{{ i18n.translate('contact.privacyPolicy') }}</span> {{ i18n.translate('contact.privacyEnd') }}</label>
       </div>
       @if (consentMissing()) {
         <p class="checkbox-section__error">{{ i18n.translate('contact.privacyError') }}</p>

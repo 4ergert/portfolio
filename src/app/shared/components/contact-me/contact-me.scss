@@ -186,6 +186,9 @@
     &__input {
       border: none;
       background-color: transparent;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
       font-family: Fira Code;
       font-weight: 500;
       font-style: Medium;
@@ -246,7 +249,8 @@
     }
 
     & h2 {
-      font-size: 56px;
+      font-size: clamp(32px, 14vw, 56px);
+      overflow-wrap: anywhere;
     }
 
     &__form__divider {

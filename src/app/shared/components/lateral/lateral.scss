@@ -248,6 +248,18 @@
   }
 }
 
+@media (max-width: 380px) {
+  .lateral {
+    &_left {
+     margin: 0 4px;
+   }
+    
+    &_right {
+      margin: 0 4px;
+    }
+  }
+}
+
 @media (max-width: 450px) {
   .lateral {
     height: 100vh;

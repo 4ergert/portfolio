@@ -20,9 +20,9 @@ export class References {
 
   readonly references: Reference[] = [
     {
-      quote: { en: 'Placeholder reference: Julian approaches challenges with care, communicates clearly, and always looks for practical solutions.', de: 'Beispielreferenz: Julian geht Herausforderungen sorgfältig an, kommuniziert klar und sucht stets nach praktischen Lösungen.' },
-      author: { en: 'Sample colleague', de: 'Beispielkollege' },
-      role: { en: 'Project partner', de: 'Projektpartner' },
+      quote: { en: 'Julian is very creative and likes to exaggerate himself in order to test his limits.', de: 'Julian ist sehr kreativ, übertreibt gerne für sich, um Grenzen auszutesten.' },
+      author: { en: 'Hans Tammen', de: 'Hans Tammen' },
+      role: { en: 'Friend', de: 'Freund' },
     },
     {
       quote: { en: 'Placeholder reference: Julian is a reliable team member whose technical skills and proactive approach contribute to successful projects.', de: 'Beispielreferenz: Julian ist ein zuverlässiges Teammitglied, dessen technische Fähigkeiten und Eigeninitiative zum Erfolg von Projekten beitragen.' },

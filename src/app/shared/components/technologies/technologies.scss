@@ -236,11 +236,23 @@
     padding: 24px 32px;
 
     &__technologies {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       padding: 0;
 
       & img {
         width: 60px;
         height: 60px;
+      }
+    }
+
+    &__technology {
+      width: 100%;
+      height: auto;
+
+      & p {
+        max-width: 100%;
+        font-size: clamp(11px, 3.4vw, 18px);
+        overflow-wrap: anywhere;
       }
     }
   }
@@ -250,8 +262,8 @@
 
   .skill_set {
     &__technology {
-      width: 80px;
-      height: 92px;
+      width: 100%;
+      height: auto;
     }
   }
 }

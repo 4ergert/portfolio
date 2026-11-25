@@ -120,6 +120,7 @@ h3:focus-visible .project-preview-wrapper {
 
 .project_techs {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
 }
 

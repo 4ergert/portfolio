@@ -12,8 +12,21 @@ export interface ProjectPreview {
 }
 
 export const PROJECTS: readonly ProjectPreview[] = [
-  {
+    {
     id: '01',
+    title: { en: "Grimoire", de: 'Grimoire' },
+    image: 'img/grimoire.png',
+    alt: { en: "Preview of Grimoire", de: 'Vorschau von Grimoire' },
+    description: {
+      en: 'A chess platform for building and training your own opening repertoire and analyzing games with Stockfish - one of the strongest chess engines in the world - and trying to beat the engine across 10 different difficulty levels.',
+      de: 'Eine Schachplattform zum bauen und trainieren des eigenen Eröffnungsrepertoires, Analysieren mit Stockfish -  einer der weltweit stärksten Schach-Engines - und versuche ihn in 10 Schwierigkeitsgraden zu besiegen.',
+    },
+    using: ['JavaScript', 'TypeScript', 'Angular'],
+    githubLink: 'https://github.com/4ergert/grimoire',
+    liveDemoLink: 'https://grimoire.julian-hergert.de'
+  },
+  {
+    id: '02',
     title: { en: "Louan's Reise", de: 'Louans Reise' },
     image: 'img/louans_reise.png',
     alt: { en: "Preview of Louan's Reise", de: 'Vorschau von Louans Reise' },
@@ -26,7 +39,7 @@ export const PROJECTS: readonly ProjectPreview[] = [
     liveDemoLink: 'https://louans-reise.julian-hergert.de'
   },
   {
-    id: '02',
+    id: '03',
     title: { en: 'Poll App', de: 'Umfrage-App' },
     image: 'img/poll_app.png',
     alt: { en: 'Preview of Poll App', de: 'Vorschau der Umfrage-App' },
@@ -39,7 +52,7 @@ export const PROJECTS: readonly ProjectPreview[] = [
     liveDemoLink: 'https://poll-app.julian-hergert.de'
   },
   {
-    id: '03',
+    id: '04',
     title: { en: 'Join', de: 'Join' },
     image: 'img/kanban.png',
     alt: { en: 'Preview of Kanban Board', de: 'Vorschau des Kanban-Boards' },
@@ -52,7 +65,7 @@ export const PROJECTS: readonly ProjectPreview[] = [
     liveDemoLink: 'https://join.julian-hergert.de'
   },
   {
-    id: '04',
+    id: '05',
     title: { en: 'Memory Game', de: 'Memory-Spiel' },
     image: 'img/memory.png',
     alt: { en: 'Preview of Memory Game', de: 'Vorschau des Memory-Spiels' },
